@@ -10,6 +10,9 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { UserComponent } from './components/user/user.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
+import { CartComponent } from './components/cart/cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +22,9 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     HomepageComponent,
     UserComponent,
     ForgotPasswordComponent,
+    CartComponent,
+    CheckoutComponent,
+
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
