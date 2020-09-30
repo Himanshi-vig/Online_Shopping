@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './components/authentication/signup/signup.component';
 import { LoginComponent } from './components/authentication/login/login.component';
 import { NavbarComponent } from './components/layout/navbar/navbar.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { NavbarComponent } from './components/layout/navbar/navbar.component';
     SignupComponent,
     LoginComponent,
     NavbarComponent,
+    HomepageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
