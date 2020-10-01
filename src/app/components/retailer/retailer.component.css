@@ -1,0 +1,50 @@
+.topnav
+{
+  border-radius: 15px;
+  background: black;
+  padding: 20px;
+  width: 1540px;
+  height: 25px;
+}
+
+.header
+{
+  border-radius: 5px;
+  background: lightblue;
+  padding: 15px;
+  width: 1540px;
+  height: 13px;
+}
+
+.btn-group button
+{
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid green; 
+  color: black; 
+  cursor: pointer; 
+  width: 30%;
+  height:50px;
+  margin: 60px;
+}
+
+.values
+{
+  box-sizing: border-box;
+  width: 50%;
+  border: 5px solid green;
+  float: right;
+  margin: 15px;
+  height: 500px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: lightblue;
+  color: white;
+  text-align: center;
+  margin: 10px;
+}

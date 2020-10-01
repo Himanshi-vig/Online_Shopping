@@ -11,6 +11,8 @@ import { UserComponent } from './components/user/user.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { RetailerComponent } from './components/retailer/retailer.component';
+import { RetailerAddproductComponent } from './components/retailer-addproduct/retailer-addproduct.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     ForgotPasswordComponent,
     CartComponent,
     CheckoutComponent,
+    RetailerComponent,
+    RetailerAddproductComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule],

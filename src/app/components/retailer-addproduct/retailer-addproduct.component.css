@@ -1,0 +1,60 @@
+.topnav
+{
+  background: #cce6ff;
+  padding: 20px;
+  width: 1540px;
+  height: 25px;
+}
+
+.container
+{
+   width: 100%;
+   margin-left: 60px;
+   margin-right: 60px;
+   padding: 20px;
+   text-align: center;
+}
+
+input[type=text],input[type=number],input[type=image]
+{
+    width: 80%;
+    padding: 15px 10px;
+    display: inline-block;
+    border: 2px solid #ff414f;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+label
+{
+    float: left;
+    font-size: 25px;
+    padding: 10px;
+    border: lightblue 5px;
+}
+
+span
+{
+    display: block;
+    overflow: hidden;
+    padding: 0 4px 0 6px;
+}
+
+button
+{
+    background-color: #ff414f;
+    color: white;
+    padding: 14px 20px;
+    margin: 18px 0;
+    border: none;
+    cursor: grabbing;
+    width: 20%;
+    font-size: 20px;
+}
+
+body
+{
+    background-color:#cce6ff;
+}
