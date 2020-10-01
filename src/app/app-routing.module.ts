@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/authentication/login/login.component';
 import { SignupComponent } from './components/authentication/signup/signup.component';
@@ -6,6 +6,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { RetailerAddproductComponent } from './components/retailer-addproduct/retailer-addproduct.component';
+import { RetailerComponent } from './components/retailer/retailer.component';
 import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'user', component: UserComponent },
+  { path: 'retailer', component: RetailerComponent },
+  { path: 'retailer-addproduct', component: RetailerAddproductComponent },
 ];
 
 @NgModule({
