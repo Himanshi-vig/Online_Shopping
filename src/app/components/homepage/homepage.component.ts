@@ -12,4 +12,7 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  myFunction1() {
+    alert("Please Login First to Compare");
+}
 }
