@@ -9,7 +9,6 @@ import { NavbarComponent } from './components/layout/navbar/navbar.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { UserComponent } from './components/user/user.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 

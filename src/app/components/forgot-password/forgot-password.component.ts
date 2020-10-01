@@ -11,5 +11,8 @@ export class ForgotPasswordComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  myFunction() {
+    alert("New Password is sent to your email address");
+  }
 
 }
