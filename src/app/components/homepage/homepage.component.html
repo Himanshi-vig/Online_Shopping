@@ -9,8 +9,9 @@
             <button>Products</button>
             <button onclick="myFunction1()"> Compare </button>
            
-            <a href="Cart.html"><button>Cart</button></a>
-            <a href="Login.html"><button>Login/SignUp</button></a>
+            <a [routerLink] = "['/cart']"><button>Cart</button></a>
+            <a [routerLink] = "['/login']"><button>Login/SignUp</button></a>
+            <a [routerLink] = "['/retailer']"><button>Add Retailer</button></a>
             <div class="dropdown">
             <button class="dropbtn">Categories</button>
             <div class="dropdown-content">
