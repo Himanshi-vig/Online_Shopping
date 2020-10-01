@@ -14,6 +14,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { RetailerComponent } from './components/retailer/retailer.component';
 import { RetailerAddproductComponent } from './components/retailer-addproduct/retailer-addproduct.component';
+import { AddretailerComponent } from './components/addretailer/addretailer.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { RetailerAddproductComponent } from './components/retailer-addproduct/re
     CheckoutComponent,
     RetailerComponent,
     RetailerAddproductComponent,
+    AddretailerComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule],
