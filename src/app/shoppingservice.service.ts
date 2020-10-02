@@ -10,9 +10,9 @@ export class ShoppingserviceService {
 
   constructor(private http: HttpClient) { }
 
-  register(Retailer): Observable<Retailer> {
+  checkregister(retailer : Retailer): Observable<Retailer> {
     let registerUrl = 'http://localhost:8181/register';
-    return this.http.post<Retailer>(registerUrl,Retailer);
+    return this.http.post<Retailer>(registerUrl,retailer);
   }
 
 }

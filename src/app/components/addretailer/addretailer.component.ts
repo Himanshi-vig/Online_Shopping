@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingserviceService} from '../../shoppingservice.service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
 @Component({
   selector: 'app-addretailer',
   templateUrl: './addretailer.component.html',
@@ -10,11 +12,10 @@ export class AddretailerComponent {
 
   constructor(private shoppingservice : ShoppingserviceService) { }
 
-  retailer : Retailer = new Retailer;
-  data: any;
+  retailer : Retailer = new Retailer();
 
   register() {
-    this.shoppingservice.register(this.retailer).subscribe((response) => (this.data = response))
+    this.shoppingservice.checkregister(this.retailer).subscribe(response => alert(JSON.stringify(response)));
   }
 
 }
