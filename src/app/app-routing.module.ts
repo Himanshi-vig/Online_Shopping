@@ -7,6 +7,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { ProductComponent } from './components/product/product.component';
 import { RetailerAddproductComponent } from './components/retailer-addproduct/retailer-addproduct.component';
 import { RetailerComponent } from './components/retailer/retailer.component';
 import { UserComponent } from './components/user/user.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'retailer', component: RetailerComponent },
   { path: 'retailer-addproduct', component: RetailerAddproductComponent },
   { path: 'addretailer', component: AddretailerComponent },
+  { path: 'product', component: ProductComponent },
 ];
 
 @NgModule({

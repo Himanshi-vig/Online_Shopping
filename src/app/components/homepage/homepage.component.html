@@ -1,35 +1,41 @@
+<div class="search">
+  <input type="text" size="40" placeholder="Search.." />
+</div>
 
-            <div class="search">
-             <input type="text" size="40" placeholder="Search.." >
-            </div>
-           
-            <div class="btn-group">
-           <!----Hello Guys!!! Welcome to the new page.--> 
-           
-            <button>Products</button>
-            <button onclick="myFunction1()"> Compare </button>
-           
-            <a [routerLink] = "['/cart']" routerLinkActive="active"><button>Cart</button></a>
-            <a [routerLink] = "['/login']" routerLinkActive="active"><button>Login/SignUp</button></a>
-            <a [routerLink] = "['/addretailer']" routerLinkActive="active"><button>Add Retailer</button></a>
-            <div class="dropdown">
-            <button class="dropbtn">Categories</button>
-            <div class="dropdown-content">
-                <a href="#">Shirt</a>
-                <a href="#">Pant</a>
-                <a href="#">Jeans</a>
-              </div>
-            </div>
-        </div>
+<div class="btn-group">
+  <!----Hello Guys!!! Welcome to the new page.-->
 
-    <br />
-    <div class="productsdisp">
-      <h2 style="margin: 250px; text-align: center">
-        Product's Images will Display Here
-      </h2>
+  <a [routerLink]="['/product']" routerLinkActive="active"
+    ><button>Products</button></a
+  >
+  <button onclick="myFunction1()">Compare</button>
+
+  <a [routerLink]="['/cart']" routerLinkActive="active"
+    ><button>Cart</button></a
+  >
+  <a [routerLink]="['/login']" routerLinkActive="active"
+    ><button>Login/SignUp</button></a
+  >
+  <a [routerLink]="['/addretailer']" routerLinkActive="active"
+    ><button>Add Retailer</button></a
+  >
+  <div class="dropdown">
+    <button class="dropbtn">Categories</button>
+    <div class="dropdown-content">
+      <a href="#">Shirt</a>
+      <a href="#">Pant</a>
+      <a href="#">Jeans</a>
     </div>
-    <br />
-    <div class="topproducts">
-      <h2 style="text-align: center">Top Products</h2>
-    </div>
+  </div>
+</div>
 
+<br />
+<div class="productsdisp">
+  <h2 style="margin: 250px; text-align: center">
+    Product's Images will Display Here
+  </h2>
+</div>
+<br />
+<div class="topproducts">
+  <h2 style="text-align: center">Top Products</h2>
+</div>
