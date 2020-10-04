@@ -2,21 +2,44 @@
   <section>
     <h1 class="heading">Retailer Registration Form</h1>
     <div class="registration-form">
-      <form (ngSubmit)="register()">
+      <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
         <div class="form">
-          <input name = "t1" type="text" placeholder="Enter Name" [(ngModel)]= retailer.name/>
+          <label for="name">Name:</label>
+          <input name = "name" type="text" placeholder="Enter Name" [(ngModel)]= retailer.name #name = "ngModel" [ngClass] ="{ 'is-invalid': f.submitted && name.invalid}" required />
+          <div *ngIf="f.submitted && t1.invalid">
+            <div *ngIf = "t1.errors.required">Name is required</div>
+          </div>
         </div>
         <div class="form">
-          <input name= "t2" type="email" placeholder="Enter Email" [(ngModel)]= retailer.email/>
+          <label for="t2">Email:</label>
+          <input name= "t2" type="email" placeholder="Enter Email" [(ngModel)]= retailer.email #email="ngModel" [ngClass]="{ 'is-invalid':f.submitted && email.invalid}" required email/>
+          <div *ngIf="f.submitted && email.invalid">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.email">Email must be a valid email address</div>
+          </div>
         </div>
         <div class="form">
-          <input name = "t3" type="password" placeholder="Enter Password" [(ngModel)]= retailer.password />
+          <label for="t3">Password:</label>
+          <input name = "t3" type="password" placeholder="Enter Password" [(ngModel)]= retailer.password #password="ngModel" [ngClass] ="{ is-invalid:f.submitted && password.invalid }" required minlength="8"/>
+          <div *ngIf="f.submitted && password.invalid">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.required">Password must be 8 characters</div>
+          </div>
         </div>
         <div class="form">
-          <input name = "t4" type="number" placeholder="Enter Phone Number" [(ngModel)]= retailer.phoneNo/>
+          <label for="t4">Phone Number:</label>
+          <input name = "t4" type="number" placeholder="Enter Phone Number" [(ngModel)]= retailer.phoneNo #phonenumber="ngModel" [ngClass] ="{ is-invalid:f.submitted && phonenumber.invalid }" required length="10"/>
+          <div *ngIf="f.submitted && t4.invalid">
+            <div *ngIf="t4.errors.required">Phone Number  is required</div>
+            <div *ngIf="t4.errors.required">Phone Number must be 10 characters</div>
+          </div>
         </div>
         <div class="form">
-          <input name = "t5" type="text" placeholder="Enter Address" [(ngModel)]= retailer.address/>
+          <label for="t5">Address:</label>
+          <input name = "t5" type="text" placeholder="Enter Address" [(ngModel)]= retailer.address #address="ngModel" [ngClass] ="{ is-invalid:f.submitted && address.invalid }" />
+         <div *ngIf="f.submitted && t5.invalid">
+            <div *ngIf="t5.errors.required">Address is required</div>
+          </div>
         </div>
         <div class="signup-btn">
           <button class="btn">Sign Up</button>
