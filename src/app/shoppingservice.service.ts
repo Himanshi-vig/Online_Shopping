@@ -18,8 +18,8 @@ export class ShoppingserviceService {
     let productUrl = 'http://localhost:6969/addproduct';
     return this.http.post<Product>(productUrl, product);
   }
-  loadProduct(product: Product): Observable<Product> {
-    let displayUrl = 'http://localhost:6969/addproduct';
-    return this.http.post<Product>(displayUrl, product);
+  displayProducts(product : Product): Observable<Product> {
+  return null;
   }
+  
 }

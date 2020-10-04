@@ -10,33 +10,8 @@ export class ListOfProductsComponent {
   products: Product[];
 
   constructor() {}
-  show() {
-    this.products = [
-      new Product(
-        1,
-        'iphone 11',
-        69000,
-        'https://rukminim1.flixcart.com/image/312/312/k2jbyq80pkrrdj/mobile-refurbished/k/y/d/iphone-11-256-u-mwm82hn-a-apple-0-original-imafkg25mhaztxns.jpeg?q=70',
-        'Apple',
-        'This product is amazing'
-      ),
-      new Product(
-        2,
-        'iphone 11 max',
-        80000,
-        'https://rukminim1.flixcart.com/image/312/312/k2jbyq80pkrrdj/mobile-refurbished/y/k/z/iphone-11-64-a-mwlx2hn-a-apple-0-original-imafkg24ymsjav9h.jpeg?q=70',
-        'Samsung',
-        'This is great'
-      ),
-      new Product(
-        2,
-        'iphone 11 max pro',
-        90000,
-        'https://rukminim1.flixcart.com/image/312/312/k9loccw0/mobile/p/z/q/apple-iphone-se-mxd02hn-a-original-imafrcpjfehbbqgb.jpeg?q=70',
-        'Apple',
-        'This is wow'
-      ),
-    ];
+  display(){
+    
   }
 }
 
@@ -47,13 +22,22 @@ export class Product {
   imgUrl: string;
   brand: string;
   description: string;
+  productImage1 : string;
+  productImage2 : string;
+  productImage3 : string;
+  productImage4 : string;
+  
   constructor(
     id: number,
     name: string,
     price: number,
     imgUrl: string,
     brand: string,
-    description: string
+    description: string,
+    productImage1 : string,
+    productImage2 : string,
+    productImage3 : string,
+    productImage4 : string
   ) {
     this.id = id;
     this.name = name;
@@ -61,5 +45,9 @@ export class Product {
     this.imgUrl = imgUrl;
     this.brand = brand;
     this.description = description;
+    this.productImage1 = productImage1;
+    this.productImage2 = productImage2;
+    this.productImage3 = productImage3;
+    this.productImage4 = productImage4;
   }
 }
