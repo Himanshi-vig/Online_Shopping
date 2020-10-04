@@ -5,18 +5,21 @@ import { Retailer } from './components/addretailer/addretailer.component';
 import { Product } from './components/retailer-addproduct/retailer-addproduct.component';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ShoppingserviceService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  checkregister(retailer : Retailer): Observable<Retailer> {
+  checkregister(retailer: Retailer): Observable<Retailer> {
     let registerUrl = 'http://localhost:6969/register';
-    return this.http.post<Retailer>(registerUrl,retailer);
+    return this.http.post<Retailer>(registerUrl, retailer);
   }
-  checkAddProduct(product : Product): Observable<Product> {
+  checkAddProduct(product: Product): Observable<Product> {
     let productUrl = 'http://localhost:6969/addproduct';
-    return this.http.post<Product>(productUrl,product);
+    return this.http.post<Product>(productUrl, product);
+  }
+  loadProduct(product: Product): Observable<Product> {
+    let displayUrl = 'http://localhost:6969/addproduct';
+    return this.http.post<Product>(displayUrl, product);
   }
 }
