@@ -18,6 +18,13 @@
     
 
 }
+.button1{
+  background-color: black;
+  color: orange;
+  margin: 20px;
+  border-radius: 5px;
+  padding: 10px;
+}
 .btn-group button:hover{
      background-color: white;
     color:#ff414f;
@@ -52,7 +59,7 @@ input[type=text]
 
 body
 {
-    background-color: #cce6ff;
+    background-color: yellowgreen;
 }
 
 .topnav
@@ -110,4 +117,6 @@ body
 
 .search{
   text-align: center;
+  margin-top: 10px;
+  
 }

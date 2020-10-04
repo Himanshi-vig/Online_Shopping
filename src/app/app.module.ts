@@ -16,7 +16,8 @@ import { RetailerComponent } from './components/retailer/retailer.component';
 import { RetailerAddproductComponent } from './components/retailer-addproduct/retailer-addproduct.component';
 import { AddretailerComponent } from './components/addretailer/addretailer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductComponent } from './components/product/product.component';
+import { ListOfProductsComponent } from './components/list-of-products/list-of-products.component';
+import { ProductdetailComponent } from './components/productdetail/productdetail.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ProductComponent } from './components/product/product.component';
     RetailerComponent,
     RetailerAddproductComponent,
     AddretailerComponent,
-    ProductComponent,
+    ListOfProductsComponent,
+    ProductdetailComponent,
     
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
