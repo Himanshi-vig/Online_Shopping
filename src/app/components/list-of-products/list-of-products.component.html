@@ -5,6 +5,7 @@
     <button class="button1"> Search </button>
 </div>
 
+<button (click)="show()">View My Products</button><br/>
 <div class="card" *ngFor="let product of products">
     <img src="{{ product.imgUrl }}"/>
     <div class="container">
