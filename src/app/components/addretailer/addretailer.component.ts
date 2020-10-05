@@ -13,11 +13,10 @@ export class AddretailerComponent {
   constructor(private shoppingservice : ShoppingserviceService) { }
 
   retailer : Retailer = new Retailer();
-
+   
   register() {
     this.shoppingservice.checkregister(this.retailer).subscribe(response => alert(JSON.stringify(response)));
   }
-
 }
 
 export class Retailer{
@@ -36,3 +35,6 @@ export class Admin{
   password:string;
   
 }
+
+
+

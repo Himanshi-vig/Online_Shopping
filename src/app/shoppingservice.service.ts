@@ -8,6 +8,7 @@ import { Product } from './components/retailer-addproduct/retailer-addproduct.co
   providedIn: 'root',
 })
 export class ShoppingserviceService {
+
   constructor(private http: HttpClient) {}
 
   checkregister(retailer: Retailer): Observable<Retailer> {
@@ -26,4 +27,10 @@ export class ShoppingserviceService {
     let searchUrl = 'http://localhost:6969/search';
     return this.http.get<Product[]>(searchUrl);
   }
+
+  placeOrder(cart:Cart[],type:string):Observable<any>{
+    
+  }
+
+
 }
