@@ -9,6 +9,9 @@ import { Login } from './components/authentication/login/login.component';
   providedIn: 'root',
 })
 export class ShoppingserviceService {
+  private _url: any;
+  tempurl: any;
+
   constructor(private http: HttpClient) {}
 
   checkregister(retailer: Retailer): Observable<Retailer> {
