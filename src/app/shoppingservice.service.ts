@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Retailer } from './components/addretailer/addretailer.component';
 import { Product } from './components/retailer-addproduct/retailer-addproduct.component';
-import { Login } from './components/authentication/login/login.component';
+import { Login, LoginStatus } from './components/authentication/login/login.component';
 import { Cart } from '../app/components/dto/genericDto';
 
 @Injectable({
