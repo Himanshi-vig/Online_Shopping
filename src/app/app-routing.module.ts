@@ -12,6 +12,7 @@ import { RetailerComponent } from './components/retailer/retailer.component';
 import { UserComponent } from './components/user/user.component';
 import { ListOfProductsComponent } from './components/list-of-products/list-of-products.component';
 import { ProductdetailComponent } from './components/productdetail/productdetail.component';
+import { HeaderComponent } from './header/header.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'homepage', pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'addretailer', component: AddretailerComponent },
   { path: 'productdetail', component: ProductdetailComponent },
   { path: 'list-of-products', component: ListOfProductsComponent },
+  { path: 'header', component: HeaderComponent  },
 ];
 
 @NgModule({
