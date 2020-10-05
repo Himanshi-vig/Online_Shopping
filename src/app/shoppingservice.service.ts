@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Retailer } from './components/addretailer/addretailer.component';
 import { Product } from './components/retailer-addproduct/retailer-addproduct.component';
-import { Login } from './components/authentication/login/login.component';
+import { Login, LoginStatus } from './components/authentication/login/login.component';
 
 @Injectable({
   providedIn: 'root',
@@ -28,8 +28,8 @@ export class ShoppingserviceService {
     return this.http.get<Product[]>(searchUrl);
   }
 
-  login(login: Login): Observable<Login> {
-    let loginUrl = 'http://localhost:6969/login';
-    return this.http.post<Login>(loginUrl, login);
+  login(login: Login): Observable<LoginStatus> {
+    let loginUrl = 'http://localhost:9191/login';
+    return this.http.post<LoginStatus>(loginUrl, login);
   }
 }

@@ -4,13 +4,13 @@
     <div class="login-form">
       <form (ngSubmit)="checkLogin()">
         <div class="form">
-          <input type="text" name="t1" placeholder="Enter Email" [(ngModel)] = "login.email" />
+          <input type="text" name="t1" placeholder="Enter Email" [(ngModel)] = login.email />
         </div>
         <div class="form">
-          <input type="text" name ="t2" placeholder="Enter Password" [(ngModel)] = "login.password" />
+          <input type="text" name ="t2" placeholder="Enter Password" [(ngModel)] = login.password />
         </div>
         <div class="login-btn">
-           <button onclick="backToHomePage()" class="btn">Login</button>
+           <button class="btn">Login</button>
         </div>
       </form>
     </div>

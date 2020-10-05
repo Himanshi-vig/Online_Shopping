@@ -1,3 +1,4 @@
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddretailerComponent } from './components/addretailer/addretailer.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'productdetail', component: ProductdetailComponent },
   { path: 'list-of-products', component: ListOfProductsComponent },
   { path: 'header', component: HeaderComponent  },
+  { path: 'dashboard', component: DashboardComponent},
 ];
 
 @NgModule({

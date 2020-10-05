@@ -7,38 +7,30 @@ import { ShoppingserviceService } from '../../../shoppingservice.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   login: Login = new Login();
-  data: any;
+  data :any;
   message: string;
 
   constructor(private shoppingService: ShoppingserviceService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
   checkLogin() {
-    // this.shoppingService.login(this.login).subscribe(response => alert(JSON.stringify(response)));
     this.shoppingService.login(this.login).subscribe(data => { console.log(data);
-  // tslint:disable-next-line: align
-  if (data.status == true) {
-        sessionStorage.setItem('customerId', String(data.));
-        sessionStorage.setItem('customerName', data.name);
-        this.router.navigate(['homepage']);
+      if(data.status == true) {
+        sessionStorage.setItem('customerId', String(data.customerId));
+        sessionStorage.setItem('customerName',String(data.name));
+        this.router.navigate(['dashboard']);
       }
-      else {
+      else{
         this.message = data.statusMessage;
       }
-    });
+    })
   }
-
   }
-
-
 export class Login {
   email: string;
   password: string;
-  loginStatus: LoginStatus;
 }
 
 export class LoginStatus{

@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListOfProductsComponent } from './components/list-of-products/list-of-products.component';
 import { ProductdetailComponent } from './components/productdetail/productdetail.component';
 import { HeaderComponent } from './header/header.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HeaderComponent } from './header/header.component';
     ListOfProductsComponent,
     ProductdetailComponent,
     HeaderComponent,
+    DashboardComponent,
     
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
