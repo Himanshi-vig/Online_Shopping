@@ -1,4 +1,4 @@
-<h2>List Of Products Available</h2>
+<h2 style="text-align: center;">List Of Products Available</h2>
 
 <app-header></app-header>
 
@@ -13,32 +13,26 @@
 <div class="getproducts">
   <div class="row">
     <strong> Sort </strong>
-    <div class="forsort">
-      <div>
+     <div class="forsort">
       <label for="Radio1">Ascending</label>
-      <input type="radio" name="radioButton" id = "Radio1" value="asc" (change)="onRadioClick($event)">
-    </div>
-    <div class="forsort">
+      <input type="radio" name="radioButton" id="Radio1" value="asc" (change)="onRadioClick($event)" style="padding: 10px; margin: 5px;">
       <label for="Radio2">Descending</label>
-      <input type="radio" name="radioButton" id="Radio2" value="desc" (change)="onRadioClick($event)">
-    </div>
-    <button type="button" (click)="onBrandSortClicked()" >Brand</button><br>
-    <button type="button" (click)="onPriceSortClicked()" >Price</button>
-    </div>
+      <input type="radio" name="radioButton" id="Radio2" value="desc" (change)="onRadioClick($event)" style="padding: 10px; margin: 5px;">
+      <button type="button" (click)="onBrandSortClicked()" style="margin: 5px;">Brand</button>
+      <button type="button" (click)="onPriceSortClicked()" style="margin: 5px;">Price</button>
+      </div>
     <strong>Filter</strong>
     <div class="forfilter">
       <input type="text" placeholder="Enter Brand Name" [(ngModel)] = "product.brand">
-      <input type="number" placeholder="Enter Starting Value" [(ngModel)] = "startVal">
-      <input type="number" placeholder="Enter Ending Value" [(ngModel)] = "endVal">
+      <input type="number" placeholder="Enter Starting Value for price" [(ngModel)] = "startVal">
+      <input type="number" placeholder="Enter Ending Value for price" [(ngModel)] = "endVal">
       <button (click)="onFilterClick()">Filter</button>
     </div>
+  </div>
+</div>
     <button *ngIf = "showCompareButton" [routerLink]="['/compare']">Compare Selected Products</button>
-    <img
-      src="http://localhost:6969/downloads/{{ product.productImage1 }}"
-      style="width: 100px; height: 100px"
-    />
+    <img src="http://localhost:6969/downloads/{{ product.productImage1 }}" style="width: 100px; height: 100px"/>
     <h1>{{ product.description }}</h1>
     <h1>{{ product.price }}</h1>
     <h1>{{ product.brand }}</h1>
-  </div>
-</div>
+  

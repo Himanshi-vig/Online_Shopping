@@ -1,52 +1,25 @@
-h2{
-text-align: center;
-background-color: blue;
-color:white;
-margin: auto;
-width: 90%;
-}
-
-.button1{
-  background-color: black;
-  color: orange;
-  margin: 20px;
-  border-radius: 5px;
-  padding: 10px;
-  width: 70px;
-
-}
-
-input[type=text]
-{
-    width: 60%;
-    height: 4px; 
-    margin-top: 10px;
-    padding: 20px;
-    font-size: 20px;
-}
-
-.search{
-   text-align: center;
-}
-
-.card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  display: inline-block;
-}
-
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-/* Add some padding inside the card container */
-.container {
-  padding: 2px 16px;
-}
-
 .forsort{
   width: 50%;
-  background-color: aqua;
+  padding: 10px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+.forsort1{
+  width: 50%;
+  padding: 10px;
+  float: left;
+}
+.forfilter{
+  text-align: left;
+}
+input[type=text],input[type=number]
+{
+  width: 20%;
+  height: 1px; 
+  margin: 10px;
+  padding: 10px;
+  font-size: 15px;
+}
+.getproducts{
+  background: aqua;
 }
