@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Retailer } from './components/addretailer/addretailer.component';
 import { Product } from './components/retailer-addproduct/retailer-addproduct.component';
 import { Login } from './components/authentication/login/login.component';
+import { Cart } from '../app/components/dto/genericDto';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,7 @@ import { Login } from './components/authentication/login/login.component';
 export class ShoppingserviceService {
   private _url: any;
   tempurl: any;
+  private _tempurl: any;
 
   constructor(private http: HttpClient) {}
 
@@ -34,5 +36,31 @@ export class ShoppingserviceService {
   login(login: Login): Observable<Login> {
     let loginUrl = 'http://localhost:6969/login';
     return this.http.post<Login>(loginUrl, login);
+  }
+  updateMyCart(cartId: number, addOrMinus: number) {
+    this._url = this.tempurl;
+    this._url += 'updateMyCart/' + cartId;
+    if (addOrMinus === 1) {
+      this._url += '/' + '1';
+      return this.http.get(this._url, { responseType: 'text' });
+    } else {
+      this._url += '/' + '0';
+      return this.http.get(this._url, { responseType: 'text' });
+    }
+  }
+  deleteMyCart(cartId: string) {
+    let url = 'http://localhost:6969/deleteMyCart';
+    return this.http.delete(url + '?cartId=' + cartId);
+  }
+  addToMyCart(userId: string, productId: string) {
+    let link = 'http://localhost:6969/addToMyCart';
+    return this.http.get(
+      link + '?userId=' + userId + '&productId=' + productId
+    );
+  }
+  getMyCart(uId: string): Observable<Cart[]> {
+    this._url = this._tempurl;
+    this._url += 'getMyCart/' + uId;
+    return this.http.get<Cart[]>(this._url);
   }
 }

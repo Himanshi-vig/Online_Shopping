@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ShoppingserviceService } from 'src/app/shoppingservice.service';
-import { Cart } from '../DTO/Cart.dto';
+import { Cart } from '../dto/genericDto';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -46,29 +46,24 @@ export class CartComponent implements OnInit {
     });
   }
 
-  onAddUpdateClick(cId: number) {
-    this._shoppingService
-      .updateMyCart(cId.toString(), '1')
-      .subscribe((data: string) => {
-        //alert(data);
-        this.reloadData();
-      });
+  onAddUpdateClick(cartId: number) {
+    this._shoppingService.updateMyCart(cartId, 1).subscribe((data: string) => {
+      //alert(data);
+      this.reloadData();
+    });
   }
-  onMinusUpdateClick(cId: number) {
-    this._shoppingService
-      .updateMyCart(cId.toString(), '0')
-      .subscribe((data: string) => {
-        //alert(data);
-        this.reloadData();
-      });
+  onMinusUpdateClick(cartId: number) {
+    this._shoppingService.updateMyCart(cartId, 0).subscribe((data: string) => {
+      //alert(data);
+      this.reloadData();
+    });
   }
-  onDeleteCartProductClick(cId: number) {
-    this._shoppingService
-      .deleteMyCart(cId.toString())
-      .subscribe((data: string) => {
-        this.reloadData();
-      });
+  onDeleteCartProductClick(cartId: number) {
+    this._shoppingService.deleteMyCart(cartId).subscribe((data: string) => {
+      this.reloadData();
+    });
   }
+
   getTotalValue(pPrice, qty) {
     return pPrice * qty;
   }
