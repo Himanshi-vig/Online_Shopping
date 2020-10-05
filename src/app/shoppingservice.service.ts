@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Retailer } from './components/addretailer/addretailer.component';
 import { Product } from './components/retailer-addproduct/retailer-addproduct.component';
+import { Login } from './components/authentication/login/login.component';
 
 @Injectable({
   providedIn: 'root',
@@ -25,5 +26,10 @@ export class ShoppingserviceService {
   search(keyword: string): Observable<Product[]> {
     let searchUrl = 'http://localhost:6969/search';
     return this.http.get<Product[]>(searchUrl);
+  }
+
+  login(login: Login): Observable<Login> {
+    let loginUrl = 'http://localhost:6969/login';
+    return this.http.post<Login>(loginUrl, login);
   }
 }
