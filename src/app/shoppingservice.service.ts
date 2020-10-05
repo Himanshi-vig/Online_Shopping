@@ -22,4 +22,8 @@ export class ShoppingserviceService {
     let Url = 'http://localhost:6969/productdisplay';
     return this.http.get(Url + '?productId=' + productId);
   }
+  search(keyword: string): Observable<Product[]> {
+    let searchUrl = 'http://localhost:6969/search';
+    return this.http.get<Product[]>(searchUrl);
+  }
 }
