@@ -59,9 +59,11 @@ export class CartComponent implements OnInit {
     });
   }
   onDeleteCartProductClick(cartId: number) {
-    this._shoppingService.deleteMyCart(cartId).subscribe((data: string) => {
-      this.reloadData();
-    });
+    this._shoppingService
+      .deleteMyCart(cartId.toString())
+      .subscribe((data: string) => {
+        this.reloadData();
+      });
   }
 
   getTotalValue(pPrice, qty) {
