@@ -18,6 +18,7 @@ import { AddretailerComponent } from './components/addretailer/addretailer.compo
 import { HttpClientModule } from '@angular/common/http';
 import { ListOfProductsComponent } from './components/list-of-products/list-of-products.component';
 import { ProductdetailComponent } from './components/productdetail/productdetail.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ProductdetailComponent } from './components/productdetail/productdetail
     AddretailerComponent,
     ListOfProductsComponent,
     ProductdetailComponent,
+    HeaderComponent,
     
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
