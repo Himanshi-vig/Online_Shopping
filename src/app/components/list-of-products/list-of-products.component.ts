@@ -1,18 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { NumberValueAccessor } from '@angular/forms';
+import { ShoppingserviceService } from 'src/app/shoppingservice.service';
 
 @Component({
   selector: 'app-list-of-products',
   templateUrl: './list-of-products.component.html',
   styleUrls: ['./list-of-products.component.css'],
 })
-export class ListOfProductsComponent {
+export class ListOfProductsComponent implements OnInit {
+  product: Product;
   products: Product[];
 
-  constructor() {}
-  display(){
-    
+  constructor(private shoppingService: ShoppingserviceService) {}
+  ngOnInit(): void {
+    this.shoppingService.displayProducts(8).subscribe((response) => {
+      this.product = response;
+    });
   }
+  display() {}
 }
 
 export class Product {
@@ -22,11 +27,11 @@ export class Product {
   imgUrl: string;
   brand: string;
   description: string;
-  productImage1 : string;
-  productImage2 : string;
-  productImage3 : string;
-  productImage4 : string;
-  
+  productImage1: string;
+  productImage2: string;
+  productImage3: string;
+  productImage4: string;
+
   constructor(
     id: number,
     name: string,
@@ -34,10 +39,10 @@ export class Product {
     imgUrl: string,
     brand: string,
     description: string,
-    productImage1 : string,
-    productImage2 : string,
-    productImage3 : string,
-    productImage4 : string
+    productImage1: string,
+    productImage2: string,
+    productImage3: string,
+    productImage4: string
   ) {
     this.id = id;
     this.name = name;
