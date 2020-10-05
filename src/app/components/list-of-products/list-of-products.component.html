@@ -5,6 +5,7 @@
   <button class="button1">Search</button>
 </div>
 
+
 <!-- <div class="getproducts" *ngFor="let product of products; let i of index">
   <div class="row">
     <img [src] = "product.productImage1" style="width: 100px; height: 100px;">
@@ -15,6 +16,27 @@
 </div>-->
 <div class="getproducts">
   <div class="row">
+    <strong> Sort </strong>
+    <div class="forsort">
+      <div>
+      <label for="Radio1">Ascending</label>
+      <input type="radio" name="radioButton" id = "Radio1" value="asc" (change)="onRadioClick($event)">
+    </div>
+    <div class="forsort">
+      <label for="Radio2">Descending</label>
+      <input type="radio" name="radioButton" id="Radio2" value="desc" (change)="onRadioClick($event)">
+    </div>
+    <button type="button" (click)="onBrandSortClicked()" >Brand</button><br>
+    <button type="button" (click)="onPriceSortClicked()" >Price</button>
+    </div>
+    <strong>Filter</strong>
+    <div class="forfilter">
+      <input type="text" placeholder="Enter Brand Name" [(ngModel)] = "product.brand">
+      <input type="number" placeholder="Enter Starting Value" [(ngModel)] = "startVal">
+      <input type="number" placeholder="Enter Ending Value" [(ngModel)] = "endVal">
+      <button (click)="onFilterClick()">Filter</button>
+    </div>
+    <button *ngIf = "showCompareButton" [routerLink]="['/compare']">Compare Selected Products</button>
     <img
       src="http://localhost:6969/downloads/{{ product.productImage1 }}"
       style="width: 100px; height: 100px"
