@@ -5,13 +5,11 @@
   <button class="button1">Search</button>
 </div>
 
-<div class="card" *ngFor="let product of products">
-    <h4><b>{{ product.name }}</b></h4>
-    <p>{{ product.price }}</p>
-    <p>{{ product.brand }}</p>
-    <p>{{ product.description }}</p>
-    <p>{{ product.productImage}}</p>
-    <p>{{ product.description }}</p>
-    <p>{{ product.description }}</p>
-    <p>{{ product.description }}</p>
+<div class="getproducts" *ngFor="let product of products; let i of index">
+  <div class="row">
+    <img [src] = "product.productImage1" style="width: 100px; height: 100px;">
+    <h1>{{ product.description }}</h1>
+    <h1> {{ product.price }}</h1>
+    <h1> {{ product.brand }}</h1>
   </div>
+</div>
