@@ -23,6 +23,7 @@ export class ListOfProductsComponent implements OnInit {
   compareProduct: number[] = [];
   showCompareButton: boolean = false;
   name: string;
+  
 
 
   constructor(private shoppingService: ShoppingserviceService,
@@ -31,13 +32,13 @@ export class ListOfProductsComponent implements OnInit {
               
 
   ngOnInit(): void {
-      this.shoppingService.displayAllProducts().subscribe((response) => {
-      this.products = response;
+      //this.shoppingService.displayAllProducts().subscribe((response) => {
+      //this.products = response;
       //this.showCompareButton = false;
       //this.keyword = this.shoppingService.value;
       //console.log(this.keyword);
-      //this.shoppingService.search(this.keyword).subscribe(data =>{
-        //console.log(data);
+      this.shoppingService.search(this.keyword).subscribe(data =>{
+        console.log(data);
 
         this.products = data;
 

@@ -10,9 +10,16 @@
             <td>{{getTotalValue(cart.pPrice,cart.qty)}}</td>
         </tr>
     </table>
-    <input type="text" value ="Card"placeholder="Enter Payment Type" id="payType" [(ngModel)]="payType"> &nbsp; <br>
 
-    <div class="col-50">
+    <strong>Your Total Cart Value is {{totalPrice}}</strong> <br>
+
+    <label for="cars">Choose The Payment Method:</label>
+    <select id="payType" name="cars" [(ngModel)]="payType">
+      <option value="Card">Debit Card</option>
+    </select>
+   <!--<input type="submit" value="submit"  placeholder="Enter Payment Type"  [(ngModel)]="payType"> &nbsp; --> <br>
+
+    <div class="col-50" >
         <h3 >Enter Card Details</h3>
         <label for="cname" style="margin:20px">Name on Card</label>  
         <input type="text" id="cname" name="cardname" placeholder="John More Doe">  <br>
@@ -27,12 +34,11 @@
           </div>
           <div class="col-50">
             <label for="cvv" style="margin:20px">CVV</label>
-            <input type="text" id="cvv" name="cvv" placeholder="352"> <br>
+            <input type="text" id="cvv" name="cvv" placeholder="352"> 
           </div>
         </div>
       </div>
     <button class="btn btn-warning my-2" (click)="placeOrder()" style="margin:20px">Buy Products</button> &nbsp;
-    <strong>Your Total Cart Value is {{totalPrice}}</strong>
 </div>
 
 <app-footer></app-footer>
