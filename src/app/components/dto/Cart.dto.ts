@@ -8,9 +8,6 @@ export class Cart
 	pBrand : string;
 	pPrice : number;
 	totalPrice : number;
-
-
-	
-	productId:number;
-	userId:number;
 }
+
+
