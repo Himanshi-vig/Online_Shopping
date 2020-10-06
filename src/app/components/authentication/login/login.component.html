@@ -9,8 +9,8 @@
         <div class="form">
           <input type="text" name ="t2" placeholder="Enter Password" [(ngModel)] = login.password />
         </div>
-        <div class="login-btn">
-           <button class="btn">Login</button>
+        <div class="login-btn"> 
+           <button (click)='checkLogin()' type="submit" class="loginbtn">Login</button>
         </div>
       </form>
     </div>

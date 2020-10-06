@@ -45,7 +45,7 @@ export class ShoppingserviceService {
   }
 
   login(login: Login): Observable<LoginStatus> {
-    let loginUrl = 'http://localhost:9191/login';
+    let loginUrl = 'http://localhost:6969/login';
     return this.http.post<LoginStatus>(loginUrl, login);
   }
   updateMyCart(cartId: number, addOrMinus: number) {

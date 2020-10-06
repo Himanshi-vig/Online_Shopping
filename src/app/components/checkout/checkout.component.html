@@ -5,8 +5,8 @@
            
             <div class="btn-group">
           
-            <button> Back </button>
-            <button>Home Page</button>
+            <a [routerLink]="['/cart']" routerLinkActive="active"><button> Back </button></a>
+            <a [routerLink]="['/homepage']"> <button>Home Page</button></a>
             <button>Categories</button>
             <button>Cart</button>
             <button>Login/SignUp</button>
@@ -18,9 +18,10 @@
                 Payment Method : <div class="dropdown">
                 <button class="dropbtn">Choose Your Payment Option</button>
                 <div class="dropdown-content">
-                    <a href="#">Net Banking</a>
-                    <a href="#">Credit/DebitCard</a>
-                    <a href="#">Cash On Delivery</a>
+                    
+                    <a [routerLink]="['/user-placeorder']" routerLinkActive="active">Net Banking</a>
+                    <a [routerLink]="['/user-placeorder']" routerLinkActive="active">Credit/DebitCard</a>
+                    <a [routerLink]="['/user-placeorder']" routerLinkActive="active">Cash On Delivery</a>
                 </div>
                 </div>
                  </div>
