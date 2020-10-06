@@ -1,7 +1,7 @@
         <div class = "topnav">
         <form>
-        <input class="search-container" type="text"  placeholder="Search.." [(ngModel)] ="keyword"/>
-        <button class="b" (click)="onProductSearch()"> Search </button> 
+        <input class="search-container" name ="a1" type="text"  placeholder="Search.." [(ngModel)] ="keyword"/>
+        <button [routerLink] = "['/list-of-products']" (click)= "test()" class="b" type="button"> Search </button> 
         <button class="b" >Login</button>
         </form>
         </div>

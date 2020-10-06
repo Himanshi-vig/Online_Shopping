@@ -17,6 +17,7 @@ export class ShoppingserviceService {
   private _url: any;
   tempurl: any;
   private _tempurl: any;
+ 
 
   constructor(private http: HttpClient) {}
 
@@ -43,8 +44,16 @@ export class ShoppingserviceService {
   }
 
   search(keyword: string): Observable<Product[]> {
-    let searchUrl = 'http://localhost:6969/search/' + keyword;
+    let searchUrl = 'http://localhost:6969/search?search=' + keyword;
     return this.http.get<Product[]>(searchUrl);
+  }
+
+  public value;
+  sendInformation(data) {
+    
+    this.value = data;
+    console.log(this.value);
+    
   }
 
   placeOrder(cart: Cart[], type: string): Observable<any> {
