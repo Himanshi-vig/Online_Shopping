@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NumberValueAccessor } from '@angular/forms';
+import { ActivatedRoute, ParamMap ,Router } from '@angular/router';
 import { ShoppingserviceService } from 'src/app/shoppingservice.service';
-import { ProductDto } from '../dto/genericDto';
+import { ProductDto } from '../dto/ProductDto';
+
 
 @Component({
   selector: 'app-list-of-products',
@@ -10,7 +12,8 @@ import { ProductDto } from '../dto/genericDto';
 })
 export class ListOfProductsComponent implements OnInit {
   product: Product;
-  products: ProductDto[];
+  keyword: string;
+  products;
   isDesc: boolean = false;
   isAsc: boolean = false;
   sortFlag: number = -1;
@@ -19,13 +22,30 @@ export class ListOfProductsComponent implements OnInit {
   message: string;
   compareProduct: number[] = [];
   showCompareButton: boolean = false;
+  name: string;
 
-  constructor(private shoppingService: ShoppingserviceService) {}
+
+  constructor(private shoppingService: ShoppingserviceService,
+              private router: Router,
+              private route: ActivatedRoute) {}
+              
+
   ngOnInit(): void {
-    this.shoppingService.displayAllProducts().subscribe((response) => {
-      this.products = response;
-    });
+    // this.shoppingService.displayAllProducts().subscribe((response) => {
+      // this.products = response;
+      this.showCompareButton = false;
+      this.keyword = this.shoppingService.value;
+      console.log(this.keyword);
+      this.shoppingService.search(this.keyword).subscribe(data =>{
+        //console.log(data);
+        this.products= data;
+      })
   }
+
+  test() {
+    console.log(this.products);
+  }
+
   onRadioClick($event) {
     if ($event.target.value === 'asc') {
       this.isAsc = true;
@@ -39,12 +59,12 @@ export class ListOfProductsComponent implements OnInit {
     } else if (this.isAsc === true) {
       this.sortFlag = 1;
       this.isAsc = false;
-      this.products = [];
+     // this.products = [];
       //this.shoppingService.sortProduct('brand',1).subscribe((data: Product[])=>{console.log(data);this.products=data});
     } else {
       this.sortFlag = 0;
       this.isDesc = false;
-      this.products = [];
+     // this.products = [];
       //this.shoppingService.sortProduct('brand',0).subscribe((data: Product[])=>{console.log(data);this.products=data});
     }
   }
@@ -63,17 +83,17 @@ export class ListOfProductsComponent implements OnInit {
     }
   }
 
-  onFilterClick() {
+ /* onFilterClick() {
     if (this.product.brand == '' && this.startVal == 0 && this.endVal == 0) {
       alert('nothing selected!');
     } else if (
       this.product.brand != '' &&
       this.startVal == 0 &&
       this.endVal == 0
-    ) {
-      this.products = [];
+    ) 
+     // this.products = [];
       //this.shoppingService.filterProduct(this.startVal,0,0).subscribe((data: Product[])=>{console.log(data);this.products=data});
-      if (this.products.length == 0) {
+     /* if (this.products.length == 0) {
         this.message = 'No Product Available';
       }
     } else {
@@ -98,8 +118,9 @@ export class ListOfProductsComponent implements OnInit {
       alert('Cannot Compare more than 4 Products');
     }
   }
-  display() {}
+  display() {} */
 }
+
 
 export class Product {
   id: number;
