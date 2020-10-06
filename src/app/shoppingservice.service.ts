@@ -25,7 +25,7 @@ export class ShoppingserviceService {
     let registerUrl = 'http://localhost:6969/register';
     return this.http.post<Retailer>(registerUrl, retailer);
   }
-  chechUserRegister(customer : User):Observable<User>{
+  checkUserRegister(customer : User):Observable<User>{
     let registerUrl = 'http://localhost:6969/userRegistration';
     return this.http.post<User>(registerUrl,customer);
   }

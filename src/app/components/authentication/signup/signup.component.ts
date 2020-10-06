@@ -14,7 +14,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
   userRegistration(){
-    this.shoppingservice.chechUserRegister(this.customer).subscribe(response=>
+    this.shoppingservice.checkUserRegister(this.customer).subscribe(response=>
       alert(JSON.stringify(response)));
   }
 }
