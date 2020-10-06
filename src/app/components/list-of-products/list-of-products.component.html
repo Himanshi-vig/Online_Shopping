@@ -1,7 +1,7 @@
 <h2 style="text-align: center">List Of Products Available</h2>
 
 <app-header></app-header>
-<!-- 
+<!--
 <div class="getproducts">
   <div class="row">
     <strong> Sort </strong>
@@ -30,8 +30,8 @@
       <button type="button" (click)="onPriceSortClicked()" style="margin: 5px">
         Price
       </button>
-    </div>
-    <strong>Filter</strong>
+    </div> -->
+    <!-- <strong>Filter</strong>
     <div class="forfilter">
       <input
         type="text"
@@ -62,7 +62,7 @@
 <div class="getproducts" *ngFor="let product of products">
   <div class="row">
     <div class="image">
-      <img
+       <img
         src="http://localhost:6969/downloads/{{ product.productImage1 }}"
         style="width: 100px; height: 100px"
       />
@@ -73,11 +73,42 @@
         <div class="gotocart">
           <button class="btn" type="button" (click)="addToCart(product.productId)">Add To Cart</button>
 
+      </div> 
+
+
         </div>
       </div>
     </div>
+
+
+    <img
+      src="http://localhost:6969/downloads/{{ product.productImage1 }}"
+      style="width: 100px; height: 100px"
+    />
+    <a [routerlink] = "['/single-product-detail']" (click)="sendProductId()">{{ product.description }}</a>
+    <h1>{{ product.price }}</h1>
+    <h1>{{ product.brand }}</h1>
+
   </div>
-</div>
+
 <!-- <img src="http://localhost:6969/downloads/{{ product.productImage1 }}" style="width: 100px; height: 100px"/>
     <h1>{{ product.description }}</h1>
     <h1>{{ product.price }}</h1> -->
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>

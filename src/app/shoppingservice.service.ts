@@ -1,4 +1,5 @@
 import { User } from './components/authentication/signup/signup.component';
+
 import { Injectable, Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -23,7 +24,8 @@ export class ShoppingserviceService {
     let registerUrl = 'http://localhost:6969/register';
     return this.http.post<Retailer>(registerUrl, retailer);
   }
-  chechUserRegister(customer: User): Observable<User> {
+
+  checkUserRegister(customer: User): Observable<User> {
     let registerUrl = 'http://localhost:6969/userRegistration';
     return this.http.post<User>(registerUrl, customer);
   }
@@ -44,6 +46,11 @@ export class ShoppingserviceService {
   search(keyword: string): Observable<Product[]> {
     let searchUrl = 'http://localhost:6969/search?search=' + keyword;
     return this.http.get<Product[]>(searchUrl);
+  }
+  sortProduct(by: string, order: boolean): Observable<Product[]> {
+    let sortUrl =
+      'http://localhost:6969/sortProduct/?by=' + by + '&order=' + order;
+    return this.http.get<Product[]>(sortUrl);
   }
 
   public value;
@@ -81,7 +88,6 @@ export class ShoppingserviceService {
   addToMyCart(userId: string, productId: string) {
     let link = 'http://localhost:6969/addToMyCart';
     return this.http.get(
-    
       link + '?userId=' + userId + '&productId=' + productId
     );
   }
