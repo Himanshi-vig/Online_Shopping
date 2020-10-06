@@ -1,4 +1,4 @@
-import { User} from './components/authentication/signup/signup.component';
+import { User } from './components/authentication/signup/signup.component';
 import { Injectable, Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -15,9 +15,7 @@ import { Cart, PlacedOrder } from '../app/components/dto/genericDto';
 })
 export class ShoppingserviceService {
   private _url: any;
-  tempurl: any;
-  private _tempurl: any;
- 
+  private _tempurl = 'http://localhost:6969/';
 
   constructor(private http: HttpClient) {}
 
@@ -25,9 +23,9 @@ export class ShoppingserviceService {
     let registerUrl = 'http://localhost:6969/register';
     return this.http.post<Retailer>(registerUrl, retailer);
   }
-  chechUserRegister(customer : User):Observable<User>{
+  chechUserRegister(customer: User): Observable<User> {
     let registerUrl = 'http://localhost:6969/userRegistration';
-    return this.http.post<User>(registerUrl,customer);
+    return this.http.post<User>(registerUrl, customer);
   }
   checkAddProduct(product: Product): Observable<Product> {
     let productUrl = 'http://localhost:6969/addproduct';
@@ -50,10 +48,8 @@ export class ShoppingserviceService {
 
   public value;
   sendInformation(data) {
-    
     this.value = data;
     console.log(this.value);
-    
   }
 
   placeOrder(cart: Cart[], type: string): Observable<any> {
@@ -63,18 +59,18 @@ export class ShoppingserviceService {
   }
 
   login(login: Login): Observable<LoginStatus> {
-    console.log("Hello")
+    console.log('Hello');
     let loginUrl = 'http://localhost:6969/login';
     return this.http.post<LoginStatus>(loginUrl, login);
   }
   updateMyCart(cartId: number, addOrMinus: number) {
-    this._url = this.tempurl;
-    this._url += 'updateMyCart/' + cartId;
+    this._url = this._tempurl;
+    this._url += 'updateMyCart?cartId=' + cartId;
     if (addOrMinus === 1) {
-      this._url += '/' + '1';
+      this._url += '&addOrMinus=' + '1';
       return this.http.get(this._url, { responseType: 'text' });
     } else {
-      this._url += '/' + '0';
+      this._url += '&addOrMinus=' + '0';
       return this.http.get(this._url, { responseType: 'text' });
     }
   }
@@ -85,12 +81,14 @@ export class ShoppingserviceService {
   addToMyCart(userId: string, productId: string) {
     let link = 'http://localhost:6969/addToMyCart';
     return this.http.get(
+    
       link + '?userId=' + userId + '&productId=' + productId
     );
   }
   getMyCart(uId: string): Observable<Cart[]> {
     this._url = this._tempurl;
-    this._url += 'getMyCart/' + uId;
+
+    this._url += 'cart?userId=' + uId;
     return this.http.get<Cart[]>(this._url);
   }
 
@@ -99,5 +97,4 @@ export class ShoppingserviceService {
     this._url += 'getMyPlacedOrders/' + uId;
     return this.http.get<PlacedOrder[]>(this._url);
   }
-
 }
