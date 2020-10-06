@@ -12,25 +12,61 @@
     </table>
 
     <strong>Your Total Cart Value is {{totalPrice}}</strong> <br>
-
+<!---
     <label for="cars">Choose The Payment Method:</label>
     <select id="payType" name="cars" [(ngModel)]="payType">
       <option value="Card">Debit Card</option>
     </select>
-   <!--<input type="submit" value="submit"  placeholder="Enter Payment Type"  [(ngModel)]="payType"> &nbsp; --> <br>
+  -->
+   <input type="text"  placeholder="Enter Payment Type" id="payType" [(ngModel)]="payType"> &nbsp; <br>
+   
+   <!--For Testing-->
+  <!--
+   <input name="t1" type="number"  placeholder="Enter Cart Id" id="CartId" [(ngModel)]=cart.cId> &nbsp; <br>
+   
+   <input name="t2" type="number"  placeholder="Enter Quantity" id="QtyId" [(ngModel)]=cart.qty    > &nbsp; <br>
+  
+   <input name="t3" type="number"  placeholder="Enter productId Type" id="productId" [(ngModel)]=cart.productId> &nbsp; <br>
+   <input name="t4" type="number"  placeholder="Enter user Id" id="userId" [(ngModel)]=cart.userId> &nbsp; <br>
+  -->
 
-    <div class="col-50" >
+
+   <div class="col-50" >
         <h3 >Enter Card Details</h3>
         <label for="cname" style="margin:20px">Name on Card</label>  
         <input type="text" id="cname" name="cardname" placeholder="John More Doe">  <br>
         <label for="ccnum" style="margin:20px">card number</label>
         <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"> <br>
         <label for="expmonth" style="margin:20px">Exp Month</label>
-        <input type="text" id="expmonth" name="expmonth" placeholder="September">
+        <select name="Month">
+          <option value="january">January</option>
+          <option value="february">February</option>
+          <option value="march">March</option>
+          <option value="april">April</option>
+          <option value="may">May</option>
+          <option value="june">June</option>
+          <option value="july">July</option>
+          <option value="august">August</option>
+          <option value="september">September</option>
+          <option value="october">October</option>
+          <option value="november">November</option>
+          <option value="december">December</option>
+        </select>
         <div class="row">
           <div class="col-50">
             <label for="expyear"style="margin:20px">Exp Year</label>
-            <input type="text" id="expyear" name="expyear" placeholder="2018">
+            <select name="Year">
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+            </select>
+            
           </div>
           <div class="col-50">
             <label for="cvv" style="margin:20px">CVV</label>
@@ -40,5 +76,3 @@
       </div>
     <button class="btn btn-warning my-2" (click)="placeOrder()" style="margin:20px">Buy Products</button> &nbsp;
 </div>
-
-<app-footer></app-footer>

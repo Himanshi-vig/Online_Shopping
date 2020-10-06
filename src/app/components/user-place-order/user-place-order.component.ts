@@ -1,4 +1,4 @@
-import { Cart } from './../dto/Cart.dto';
+// import { Cart } from './../dto/Cart.dto';
 import { ShoppingserviceService } from 'src/app/shoppingservice.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -15,6 +15,7 @@ export class UserPlaceOrderComponent implements OnInit {
   userCart: Cart[];
   uId: string;
   payType: string;
+  cart:Cart=new Cart();
 
   constructor( private router :Router,
     private shoppingService  :ShoppingserviceService) {}
@@ -48,3 +49,19 @@ placeOrder(){
 
 }
 
+export class Cart
+{
+    cId : number;
+	pId : number;
+	qty : number;
+	pImage1 : string;
+	pName : string;
+	pBrand : string;
+	pPrice : number;
+	totalPrice : number;
+
+
+	
+	productId:number;
+	userId:number;
+}
