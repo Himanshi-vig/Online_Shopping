@@ -38,7 +38,7 @@ export class ListOfProductsComponent implements OnInit {
       console.log(this.keyword);
       this.shoppingService.search(this.keyword).subscribe(data =>{
         //console.log(data);
-        this.products= data;
+        this.products = data;
       })
   }
 
