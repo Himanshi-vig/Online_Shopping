@@ -3,19 +3,19 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Retailer } from './components/addretailer/addretailer.component';
 import { Product } from './components/retailer-addproduct/retailer-addproduct.component';
-import { Login, LoginStatus } from './components/authentication/login/login.component';
-import { Cart , PlacedOrder} from '../app/components/dto/genericDto';
-
+import {
+  Login,
+  LoginStatus,
+} from './components/authentication/login/login.component';
+import { Cart, PlacedOrder } from '../app/components/dto/genericDto';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ShoppingserviceService {
-
   private _url: any;
   tempurl: any;
   private _tempurl: any;
-
 
   constructor(private http: HttpClient) {}
 
@@ -31,17 +31,21 @@ export class ShoppingserviceService {
     let Url = 'http://localhost:6969/productdisplay';
     return this.http.get(Url + '?productId=' + productId);
   }
+
+  displayAllProducts(): Observable<any> {
+    let Url = 'http://localhost:6969/all-productdisplay';
+    return this.http.get(Url);
+  }
+
   search(keyword: string): Observable<Product[]> {
-    let searchUrl = 'http://localhost:6969/search'+keyword;
+    let searchUrl = 'http://localhost:6969/search' + keyword;
     return this.http.get<Product[]>(searchUrl);
   }
 
-
-  placeOrder(cart:Cart[],type:string): Observable<any>{
+  placeOrder(cart: Cart[], type: string): Observable<any> {
     this._url = 'http://localhost:6969/';
     this._url += 'placeOrder' + '/' + type;
-    return this.http.post(this._url,cart,{responseType:'text'});
-    
+    return this.http.post(this._url, cart, { responseType: 'text' });
   }
 
   login(login: Login): Observable<LoginStatus> {
@@ -75,8 +79,7 @@ export class ShoppingserviceService {
     return this.http.get<Cart[]>(this._url);
   }
 
-  getMyPlacedOrders(uId: string) : Observable<PlacedOrder[]>
-  {
+  getMyPlacedOrders(uId: string): Observable<PlacedOrder[]> {
     this._url = this._tempurl;
     this._url += 'getMyPlacedOrders/' + uId;
     return this.http.get<PlacedOrder[]>(this._url);

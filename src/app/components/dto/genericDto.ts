@@ -8,6 +8,8 @@ export class ProductDto {
   name: string;
   brand: string;
   price: number;
+  quantity: number;
+  category: string;
 }
 export class Cart {
   cId: number;
@@ -20,14 +22,13 @@ export class Cart {
   totalPrice: number;
 }
 
-export class PlacedOrder
-{
+export class PlacedOrder {
   pName: string;
-  pId : number;
-	pImage : string;
-	pBrand : string;
-	pPrice : number;
-	pOrderDate : string;
-	pQty : number;
-	pType : string;
+  pId: number;
+  pImage: string;
+  pBrand: string;
+  pPrice: number;
+  pOrderDate: string;
+  pQty: number;
+  pType: string;
 }
