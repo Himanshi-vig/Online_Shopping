@@ -1,5 +1,7 @@
 <app-header></app-header>
+
 <h2> Welcome {{custName}}</h2>
+
 <div class="btn-group">
   <a [routerLink]="['/list-of-products']" routerLinkActive="active">
     <button>Products</button></a
@@ -19,7 +21,6 @@
     <button>Add Product</button></a
   >
   <br />
-
 
   <div class="dropdown">
     <button class="dropbtn">Men</button>
@@ -58,14 +59,39 @@
     </div>
   </div>
 </div>
-
-<br />
 <div class="productsdisp">
-  <h2 style="margin: 250px; text-align: center">
+  <!-- <h2 style="margin: 250px; text-align: center">
     Product's Images will Display Here
-  </h2>
+  </h2> -->
+  <div class="col1"></div>
+  <div class="col2">
+    <h3>Let's Go Shopping !!!</h3>
+    <form>
+      <div class="form">
+        <input type="text" placeholder="Enter Name" />
+      </div>
+      <div class="form">
+        <input type="email" placeholder="Enter Email" />
+      </div>
+      <div class="form">
+        <input type="password" placeholder="Enter Password" />
+      </div>
+      <div class="form">
+        <input type="password" placeholder="Re-enter Password" />
+      </div>
+      <div class="form">
+        <input type="date" placeholder="Enter Date Of Birth" />
+      </div>
+      <div class="form">
+        <input type="number" placeholder="Enter Phone Number" />
+      </div>
+      <div class="form">
+        <input type="text" placeholder="Enter Address" />
+      </div>
+      <div class="signup-btn">
+        <button class="btn">Sign Up</button>
+      </div>
+    </form>
+  </div>
 </div>
-<br />
-<div class="topproducts">
-  <h2 style="text-align: center">Top Products</h2>
-</div>
+<app-footer></app-footer>

@@ -14,10 +14,16 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 }
-  
- onProductSearch(){
+  test() {
+    console.log(this.keyword);
+    
+    this.shoppingService.sendInformation(this.keyword);
+  }
+ 
+  /*onProductSearch(){
+   //console.log(this.keyword);
    this.router.navigate(['/list-of-products', this.keyword]);
- }
+ } */
 /* loginUser()
   {
     this._router.navigate(['/user-login']);
