@@ -19,6 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListOfProductsComponent } from './components/list-of-products/list-of-products.component';
 import { ProductdetailComponent } from './components/productdetail/productdetail.component';
 import { UserPlaceOrderComponent } from './components/user-place-order/user-place-order.component';
+import { HeaderComponent } from './header/header.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,7 @@ import { UserPlaceOrderComponent } from './components/user-place-order/user-plac
     ListOfProductsComponent,
     ProductdetailComponent,
     UserPlaceOrderComponent,
-    
+    HeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

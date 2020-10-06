@@ -1,0 +1,19 @@
+.search{
+    text-align: center;
+    margin-top: 10px;
+    
+  }
+
+  .button1{
+    background-color: steelblue;
+    color: black;
+    margin: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 70px;
+  }
+
+  .button1:hover{
+    background-color: white;
+    color: black;
+  }

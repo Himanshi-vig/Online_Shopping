@@ -1,7 +1,8 @@
+import { Cart } from './../dto/Cart.dto';
 import { ShoppingserviceService } from 'src/app/shoppingservice.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import {Cart} from '../dto/Cart.dto';
+
 
 @Component({
   selector: 'app-user-place-order',
@@ -21,8 +22,28 @@ export class UserPlaceOrderComponent implements OnInit {
   ngOnInit(): void {
     this.uId = sessionStorage.getItem('user');
     if(this.uId=="null"){
-      alert("User Not Logged In")
+      alert("User Not Logged In");
+      this.router.navigate(['homepage']);
     }
+
+  this.shoppingService.getMyCart(this.uId).subscribe((data:Cart[])=>
+    {
+      this.userCart=data;
+      this.totalPrice=this.userCart[this.userCart.length-1].totalPrice;
+    })
+  }
+getTotalValue(pPrice,qty){
+  return pPrice*qty;
+}
+
+placeOrder(){
+  this.shoppingService.placeOrder(this.userCart,this.payType)
+  .subscribe(data=>
+    {
+      alert(data);
+      this.router.navigate(['homepage']);
+    } )
+  
   }
 
 }
