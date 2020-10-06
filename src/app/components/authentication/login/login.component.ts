@@ -16,6 +16,7 @@ export class LoginComponent {
   constructor(private shoppingService: ShoppingserviceService, private router: Router) { }
 
   checkLogin() {
+    console.log(this.login)
     this.shoppingService.login(this.login).subscribe(data => { console.log(data);
       if(data.status == true) {
         sessionStorage.setItem('customerId', String(data.customerId));
