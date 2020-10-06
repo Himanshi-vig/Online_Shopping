@@ -15,6 +15,7 @@ import { ListOfProductsComponent } from './components/list-of-products/list-of-p
 import { ProductdetailComponent } from './components/productdetail/productdetail.component';
 import {UserPlaceOrderComponent} from './components/user-place-order/user-place-order.component';
 import { HeaderComponent } from './header/header.component';
+import { SingleProductDetailComponent } from './single-product-detail/single-product-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'homepage', pathMatch: 'full' },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path : 'user-placeorder' , component : UserPlaceOrderComponent},
   { path: 'header', component: HeaderComponent  },
   { path: 'dashboard', component: DashboardComponent},
+  { path: 'single-product-detail', component: SingleProductDetailComponent}
 ];
 
 @NgModule({

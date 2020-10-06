@@ -23,6 +23,7 @@ import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserMyorderComponent } from './components/user-myorder/user-myorder.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SingleProductDetailComponent } from './single-product-detail/single-product-detail.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { FooterComponent } from './components/footer/footer.component';
     DashboardComponent,
     UserMyorderComponent,
     FooterComponent,
+    SingleProductDetailComponent,
     
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],

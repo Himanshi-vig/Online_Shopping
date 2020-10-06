@@ -35,7 +35,7 @@ export class ListOfProductsComponent implements OnInit {
       //this.shoppingService.displayAllProducts().subscribe((response) => {
       //this.products = response;
       //this.showCompareButton = false;
-      //this.keyword = this.shoppingService.value;
+      this.keyword = this.shoppingService.value;
       //console.log(this.keyword);
       this.shoppingService.search(this.keyword).subscribe(data =>{
         console.log(data);
@@ -51,7 +51,11 @@ export class ListOfProductsComponent implements OnInit {
     console.log(this.products);
   }
 
-  onRadioClick($event) {
+  sendProductId() {
+    
+  }
+
+ /* onRadioClick($event) {
     if ($event.target.value === 'asc') {
       this.isAsc = true;
     } else {
