@@ -47,6 +47,10 @@ export class ShoppingserviceService {
     let searchUrl = 'http://localhost:6969/search?search=' + keyword;
     return this.http.get<Product[]>(searchUrl);
   }
+  sortProduct(by : string, order : boolean) : Observable<Product[]> {
+    let sortUrl = 'http://localhost:6969/sortProduct/?by=' + by + '&order=' + order;
+    return this.http.get<Product[]>(sortUrl);
+  }
 
   public value;
   sendInformation(data) {
