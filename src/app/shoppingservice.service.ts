@@ -49,6 +49,7 @@ export class ShoppingserviceService {
   }
 
   login(login: Login): Observable<LoginStatus> {
+    console.log("Hello")
     let loginUrl = 'http://localhost:6969/login';
     return this.http.post<LoginStatus>(loginUrl, login);
   }

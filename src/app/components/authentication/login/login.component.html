@@ -3,10 +3,10 @@
     <h1 class="heading">Login Here</h1>
     <div class="login-form">
       <form #myForm="ngForm" (ngSubmit)="checkLogin()">
-        <div class="form">
+        <div class="simpleform">
           <input type="text" name="t1" placeholder="Enter Email" [(ngModel)] = "login.email" />
         </div>
-        <div class="form">
+        <div class="simpleform">
           <input type="text" name ="t2" placeholder="Enter Password" [(ngModel)] = "login.password" />
         </div>
         <div class="login-btn">
