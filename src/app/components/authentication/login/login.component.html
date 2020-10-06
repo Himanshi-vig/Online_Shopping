@@ -2,16 +2,21 @@
   <section>
     <h1 class="heading">Login Here</h1>
     <div class="login-form">
-      <form #myForm="ngForm" (ngSubmit)="checkLogin()">
+      <form >
         <div class="simpleform">
           <input type="text" name="t1" placeholder="Enter Email" [(ngModel)] = "login.email" />
         </div>
         <div class="simpleform">
           <input type="text" name ="t2" placeholder="Enter Password" [(ngModel)] = "login.password" />
         </div>
+<<<<<<< HEAD
         <div class="login-btn"> 
            <button (click)='checkLogin()' type="submit" class="btn">Login</button>
 
+=======
+        <div class="login-btn">
+          <button type="submit" (click) = "checkLogin()" class="btn">Login</button>
+>>>>>>> 6e727ba883fd0d83fd66bbdea1cd30aa21859cb6
         </div>
       </form>
     </div>

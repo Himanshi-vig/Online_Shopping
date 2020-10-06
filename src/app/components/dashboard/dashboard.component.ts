@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  custName: string ;
+  custId : string;
 
 
-  customerName: string = sessionStorage.getItem('customerName');
-  constructor(private router : Router) { }
-
-  ngOnInit(): void {
+  constructor(private http : HttpClient) {}
+    
+   ngOnInit(): void {
+    this.custName = sessionStorage.getItem('customerName');
+    this.custId = sessionStorage.getItem('customerId');
   }
 
 }
