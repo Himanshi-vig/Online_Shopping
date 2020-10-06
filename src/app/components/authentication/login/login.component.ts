@@ -19,8 +19,8 @@ export class LoginComponent {
     this.shoppingService.login(this.login).subscribe(data => { console.log(data);
       if(data.status == true) {
         sessionStorage.setItem('customerId', String(data.customerId));
-        sessionStorage.setItem('customerName',String(data.name));
-        this.router.navigate(['dashboard']);
+        sessionStorage.setItem('customerName',data.customerName);
+        this.router.navigate(['/dashboard']);
       }
       else{
         this.message = data.statusMessage;
@@ -36,6 +36,6 @@ export class Login {
 export class LoginStatus{
   status: boolean;
   statusMessage: string;
-  name: string;
+  customerName: string;
   customerId: number;
 }

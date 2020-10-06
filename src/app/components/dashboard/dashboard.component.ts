@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  customerName: string;
-  constructor() { }
+
+  customerName: string = sessionStorage.getItem('customerName');
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
-    this.customerName = sessionStorage.getItem('customerName');
   }
 
 }
