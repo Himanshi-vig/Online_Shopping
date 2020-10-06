@@ -1,7 +1,7 @@
 <h2 style="text-align: center">List Of Products Available</h2>
 
 <app-header></app-header>
-
+<!--
 <div class="getproducts">
   <div class="row">
     <strong> Sort </strong>
@@ -30,7 +30,7 @@
       <button type="button" (click)="onPriceSortClicked()" style="margin: 5px">
         Price
       </button>
-    </div>
+    </div> -->
     <!-- <strong>Filter</strong>
     <div class="forfilter">
       <input
@@ -67,7 +67,7 @@
         style="width: 100px; height: 100px"
       />
       <div class="describe">
-        <h1>{{ product.description }}</h1>
+        <>{{ product.description }}</h1>
         <h1>{{ product.price }}</h1>
       </div> -->
 
@@ -78,7 +78,7 @@
       src="http://localhost:6969/downloads/{{ product.productImage1 }}"
       style="width: 100px; height: 100px"
     />
-    <h1>{{ product.description }}</h1>
+    <a [routerlink] = "['/single-product-detail']" (click)="sendProductId()">{{ product.description }}</a>
     <h1>{{ product.price }}</h1>
     <h1>{{ product.brand }}</h1>
   </div>
