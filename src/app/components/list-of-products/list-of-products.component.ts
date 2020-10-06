@@ -48,7 +48,11 @@ export class ListOfProductsComponent implements OnInit {
     console.log(this.products);
   }
 
-  sendProductId() {}
+  sendProductId(i) {
+    //console.log(i);
+    console.log(this.products[i].productId);
+    this.shoppingService.getId(this.products[i].productId);
+  }
 
   /* onRadioClick($event) {
     if ($event.target.value === 'asc') {

@@ -58,6 +58,13 @@ export class ShoppingserviceService {
     this.value = data;
     console.log(this.value);
   }
+  
+  
+  public productId;
+  getId(data){
+    this.productId = data;
+    console.log(this.productId);
+  }
 
   placeOrder(cart: Cart[], type: string): Observable<any> {
     this._url = 'http://localhost:6969/';
