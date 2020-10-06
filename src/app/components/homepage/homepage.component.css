@@ -1,32 +1,87 @@
+.btn-group {
+  display: flex;
+  width: 91%;
+  margin: auto;
+}
 .btn-group button {
   border: none;
   height: 40px;
-  width: 150px;
+  width: 130px;
   background-color: #ff414f;
   color: white;
   padding: 10px;
-  font-size: 20px;
   border-radius: 50px;
+  margin: 16px 12px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+.btn-group button:hover {
+  background-color: white;
+  color: #ff414f;
+}
+.productsdisp {
+  height: 90vh;
+  margin: 16px 4rem;
+  border: 4px solid #ff414f;
+  border-radius: 8px;
+  display: flex;
+}
+.col1 {
+  width: 60%;
+  height: 100%;
+  background: url("../../../assets/images/img5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.col2 {
+  width: 40%;
+  height: 100%;
+  /* margin: auto; */
+  background-color: #fe96ab;
+}
+.col2 h3 {
+  margin: 1rem 0rem;
+  color: #ffff;
+  text-align: center;
+}
 
-  margin: 15px;
-
+.form input {
+  width: 90%;
+  height: 40px;
+  border-radius: 50px;
+  border: none;
+  background: #f3f1f1;
+  margin: 10px 0;
+  padding: 0 15px;
+  outline: none;
+  font-size: 0.9rem;
+}
+.signup-btn button {
+  width: 96%;
+  height: 40px;
+  border: none;
+  border-radius: 50px;
+  background: #ff414f;
+  color: white;
+  cursor: pointer;
   outline: none;
   opacity: 1;
   font-size: 16px;
   font-weight: 600;
 }
-.button1 {
+.signup-btn button:hover {
+  opacity: 0.9;
+}
+
+/* .button1 {
   background-color: black;
   color: orange;
   margin: 20px;
   border-radius: 5px;
   padding: 10px;
   width: 70px;
-}
-.btn-group button:hover {
-  background-color: white;
-  color: #ff414f;
-}
+} */
 
 input[type="text"] {
   width: 60%;
@@ -34,13 +89,6 @@ input[type="text"] {
   margin-top: 10px;
   padding: 20px;
   font-size: 20px;
-}
-
-.productsdisp {
-  box-sizing: border-box;
-  border: 3px solid #ff414f;
-  width: 100%;
-  height: 430px;
 }
 
 .topproducts {
@@ -108,7 +156,8 @@ body {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color: white;
+  color: #ff414f;
 }
 
 .search {
