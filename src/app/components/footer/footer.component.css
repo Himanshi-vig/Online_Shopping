@@ -1,6 +1,31 @@
-div {
-    color:white;
+footer {
+  background-color: #2d3246;
+  padding: 3rem 6rem;
 }
-.col-md-4 my-2{
-    float: right;
+.row {
+  display: flex;
+  width: 100%;
+}
+.row .col {
+  width: 100%;
+}
+.row .col:nth-child(odd) {
+  margin-left: auto;
+}
+h2 {
+  color: #ff414f;
+  margin: 0rem 0rem 1rem;
+  font-size: 30px;
+  font-weight: 600;
+}
+h4 {
+  color: #fff;
+  margin: 8px 0px;
+}
+p {
+  color: #fff;
+  font-weight: 500;
+}
+col .contact-list {
+  color: #fff;
 }
