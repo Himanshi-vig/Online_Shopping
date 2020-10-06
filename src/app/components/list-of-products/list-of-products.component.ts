@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NumberValueAccessor } from '@angular/forms';
-import { ActivatedRoute, ParamMap ,Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ShoppingserviceService } from 'src/app/shoppingservice.service';
 import { ProductDto } from '../dto/ProductDto';
-
 
 @Component({
   selector: 'app-list-of-products',
@@ -24,37 +23,38 @@ export class ListOfProductsComponent implements OnInit {
   showCompareButton: boolean = false;
   name: string;
 
-
-  constructor(private shoppingService: ShoppingserviceService,
-              private router: Router,
-              private route: ActivatedRoute) {}
-              
+  constructor(
+    private shoppingService: ShoppingserviceService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-      //this.shoppingService.displayAllProducts().subscribe((response) => {
-      //this.products = response;
-      //this.showCompareButton = false;
-      this.keyword = this.shoppingService.value;
-      //console.log(this.keyword);
-      this.shoppingService.search(this.keyword).subscribe(data =>{
-        console.log(data);
+    //this.shoppingService.displayAllProducts().subscribe((response) => {
+    //this.products = response;
+    //this.showCompareButton = false;
+    this.keyword = this.shoppingService.value;
+    //console.log(this.keyword);
+    this.shoppingService.search(this.keyword).subscribe((data) => {
+      console.log(data);
 
-        this.products = data;
+      this.products = data;
 
-        //this.products= data;
-
-      })
+      //this.products= data;
+    });
   }
 
   test() {
     console.log(this.products);
   }
 
-  sendProductId() {
-    
+  sendProductId(i) {
+    //console.log(i);
+    console.log(this.products[i].productId);
+    this.shoppingService.getId(this.products[i].productId);
   }
 
-  onRadioClick($event) {
+  /* onRadioClick($event) {
     if ($event.target.value === 'asc') {
       this.isAsc = true;
     } else {
@@ -67,13 +67,15 @@ export class ListOfProductsComponent implements OnInit {
     } else if (this.isAsc === true) {
       this.sortFlag = 1;
       this.isAsc = false;
+
       this.products = [];
       this.shoppingService.sortProduct('brand',false).subscribe(data=>{console.log(data);this.products=data});
     } else {
       this.sortFlag = 0;
       this.isDesc = false;
       this.products = [];
-      this.shoppingService.sortProduct('brand',true).subscribe(data=>{console.log(data);this.products=data});
+      this.shoppingService.sortProduct('brand',true).subscribe((data: Product[])=>{console.log(data);this.products=data});
+
     }
   }
 
@@ -90,8 +92,13 @@ export class ListOfProductsComponent implements OnInit {
       this.shoppingService.sortProduct('price',true).subscribe(data=>{console.log(data);this.products=data});
     }
   }
+  addToCart(id) {
+    this.shoppingService.addToMyCart('2', id).subscribe((data) => {
+      console.log(data);
+    });
+  }
 
- /* onFilterClick() {
+  /* onFilterClick() {
     if (this.product.brand == '' && this.startVal == 0 && this.endVal == 0) {
       alert('nothing selected!');
     } else if (
@@ -128,7 +135,6 @@ export class ListOfProductsComponent implements OnInit {
   }
   display() {} */
 }
-
 
 export class Product {
   id: number;

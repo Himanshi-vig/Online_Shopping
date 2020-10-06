@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ShoppingserviceService } from 'src/app/shoppingservice.service';
 import { Cart } from '../dto/genericDto';
 @Component({
@@ -13,18 +13,21 @@ export class CartComponent implements OnInit {
   totalPrice: number = 0;
   buyProductButton: boolean = false;
   constructor(
-    private _shoppingService: ShoppingserviceService,
-    private _router: Router
+    private shoppingService: ShoppingserviceService,
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.uId = sessionStorage.getItem('user');
+    //this.uId = sessionStorage.getItem('user');
+    this.uId = 2;
     if (this.uId == 'null') {
       alert('User Not Logged In');
-      this._router.navigate(['home']);
+      this.router.navigate(['home']);
     }
-    this._shoppingService.getMyCart(this.uId).subscribe((data: Cart[]) => {
+    this.shoppingService.getMyCart(this.uId).subscribe((data: Cart[]) => {
       this.userCart = data;
+      console.log(data);
       if (this.userCart.length == 0) {
         this.totalPrice = 0;
         this.buyProductButton = true;
@@ -35,7 +38,7 @@ export class CartComponent implements OnInit {
   }
 
   reloadData() {
-    this._shoppingService.getMyCart(this.uId).subscribe((data: Cart[]) => {
+    this.shoppingService.getMyCart(this.uId).subscribe((data: Cart[]) => {
       this.userCart = data;
       if (this.userCart.length == 0) {
         this.totalPrice = 0;
@@ -47,19 +50,20 @@ export class CartComponent implements OnInit {
   }
 
   onAddUpdateClick(cartId: number) {
-    this._shoppingService.updateMyCart(cartId, 1).subscribe((data: string) => {
-      //alert(data);
-      this.reloadData();
+    this.shoppingService.updateMyCart(cartId, 1).subscribe((data: string) => {
+      console.log(data);
+      // this.reloadData();
     });
   }
   onMinusUpdateClick(cartId: number) {
-    this._shoppingService.updateMyCart(cartId, 0).subscribe((data: string) => {
+    this.shoppingService.updateMyCart(cartId, 0).subscribe((data: string) => {
+      console.log(data);
       //alert(data);
       this.reloadData();
     });
   }
   onDeleteCartProductClick(cartId: number) {
-    this._shoppingService
+    this.shoppingService
       .deleteMyCart(cartId.toString())
       .subscribe((data: string) => {
         this.reloadData();

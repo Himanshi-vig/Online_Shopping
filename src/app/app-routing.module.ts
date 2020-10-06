@@ -34,7 +34,7 @@ const routes: Routes = [
   { path : 'user-placeorder' , component : UserPlaceOrderComponent},
   { path: 'header', component: HeaderComponent  },
   { path: 'dashboard', component: DashboardComponent},
-  { path: 'single-product-detail', component: SingleProductDetailComponent}
+  { path: 'singleProductDetail', component: SingleProductDetailComponent}
 ];
 
 @NgModule({

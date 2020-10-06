@@ -59,30 +59,25 @@
   Compare Selected Products
 </button> -->
 
-<div class="getproducts" *ngFor="let product of products">
+<div class="getproducts" *ngFor="let product of products; let i = index;">
   <div class="row">
     <div class="image">
-      <!-- <img
+       <img
         src="http://localhost:6969/downloads/{{ product.productImage1 }}"
         style="width: 100px; height: 100px"
       />
       <div class="describe">
-        <>{{ product.description }}</h1>
+        <a routerLink = "/singleProductDetail" (click)="sendProductId(i)">{{ product.description }}</a>
         <h1>{{ product.price }}</h1>
-      </div> -->
-
-      <!-- <h1>{{ product.brand }}</h1> -->
+        <h1>{{ product.brand }}</h1>
+        <div class="gotocart">
+          <button class="btn" type="button" (click)="addToCart(product.productId)">Add To Cart</button>
+      </div> 
+        </div>
+      </div>
     </div>
-
-    <img
-      src="http://localhost:6969/downloads/{{ product.productImage1 }}"
-      style="width: 100px; height: 100px"
-    />
-    <a [routerlink] = "['/single-product-detail']" (click)="sendProductId()">{{ product.description }}</a>
-    <h1>{{ product.price }}</h1>
-    <h1>{{ product.brand }}</h1>
   </div>
-</div>
+
 <!-- <img src="http://localhost:6969/downloads/{{ product.productImage1 }}" style="width: 100px; height: 100px"/>
     <h1>{{ product.description }}</h1>
     <h1>{{ product.price }}</h1> -->
