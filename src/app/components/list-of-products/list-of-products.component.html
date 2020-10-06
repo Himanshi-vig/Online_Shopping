@@ -61,13 +61,18 @@
 
 <div class="getproducts" *ngFor="let product of products">
   <div class="row">
-    <img
-      src="http://localhost:6969/downloads/{{ product.productImage1 }}"
-      style="width: 100px; height: 100px"
-    />
-    <h1>{{ product.description }}</h1>
-    <h1>{{ product.price }}</h1>
-    <!-- <h1>{{ product.brand }}</h1> -->
+    <div class="image">
+      <img
+        src="http://localhost:6969/downloads/{{ product.productImage1 }}"
+        style="width: 100px; height: 100px"
+      />
+      <div class="describe">
+        <h1>{{ product.description }}</h1>
+        <h1>{{ product.price }}</h1>
+      </div>
+
+      <!-- <h1>{{ product.brand }}</h1> -->
+    </div>
   </div>
 </div>
 <!-- <img src="http://localhost:6969/downloads/{{ product.productImage1 }}" style="width: 100px; height: 100px"/>
