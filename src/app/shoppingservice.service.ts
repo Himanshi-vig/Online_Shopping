@@ -32,7 +32,7 @@ export class ShoppingserviceService {
     return this.http.get(Url + '?productId=' + productId);
   }
   search(keyword: string): Observable<Product[]> {
-    let searchUrl = 'http://localhost:6969/search';
+    let searchUrl = 'http://localhost:6969/search'+keyword;
     return this.http.get<Product[]>(searchUrl);
   }
 
