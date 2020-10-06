@@ -2,7 +2,7 @@
   <section>
     <h1 class="heading">Login Here</h1>
     <div class="login-form">
-      <form #myForm="ngForm" (ngSubmit)="checkLogin()">
+      <form >
         <div class="simpleform">
           <input type="text" name="t1" placeholder="Enter Email" [(ngModel)] = "login.email" />
         </div>
@@ -10,7 +10,7 @@
           <input type="text" name ="t2" placeholder="Enter Password" [(ngModel)] = "login.password" />
         </div>
         <div class="login-btn">
-          <button [routerLink]="['/dashboard']" type="submit" class="btn">Login</button>
+          <button type="submit" (click) = "checkLogin()" class="btn">Login</button>
         </div>
       </form>
     </div>

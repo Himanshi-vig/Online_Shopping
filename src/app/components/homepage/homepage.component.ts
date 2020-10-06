@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-
-  constructor() { }
+  custName: string ;
+  constructor(private http : HttpClient) { }
 
   ngOnInit(): void {
+    this.custName = sessionStorage.getItem('customerName');
   }
 
   myFunction1() {
