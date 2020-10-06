@@ -1,7 +1,7 @@
 <h2 style="text-align: center">List Of Products Available</h2>
 
 <app-header></app-header>
-<!--
+
 <div class="getproducts">
   <div class="row">
     <strong> Sort </strong>
@@ -30,8 +30,8 @@
       <button type="button" (click)="onPriceSortClicked()" style="margin: 5px">
         Price
       </button>
-    </div> -->
-    <!-- <strong>Filter</strong>
+    </div>
+    <strong>Filter</strong>
     <div class="forfilter">
       <input
         type="text"
@@ -55,9 +55,9 @@
     </div>
   </div>
 </div>
-<button *ngIf="showCompareButton" [routerLink]="['/compare']">
+<!-- <button *ngIf="showCompareButton" [routerLink]="['/compare']">
   Compare Selected Products
-</button> -->
+</button> --> -->
 
 <div class="getproducts" *ngFor="let product of products; let i = index;">
   <div class="row">

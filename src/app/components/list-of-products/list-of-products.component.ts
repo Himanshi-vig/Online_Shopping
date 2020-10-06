@@ -30,17 +30,16 @@ export class ListOfProductsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    //this.shoppingService.displayAllProducts().subscribe((response) => {
-    //this.products = response;
+    this.shoppingService.displayAllProducts().subscribe((response) => {
+    this.products = response;
     //this.showCompareButton = false;
-    this.keyword = this.shoppingService.value;
+    //this.keyword = this.shoppingService.value;
     //console.log(this.keyword);
-    this.shoppingService.search(this.keyword).subscribe((data) => {
-      console.log(data);
+    //this.shoppingService.search(this.keyword).subscribe((data) => {
+    //console.log(data);
 
-      this.products = data;
+     //this.products = data;
 
-      //this.products= data;
     });
   }
 
@@ -54,7 +53,7 @@ export class ListOfProductsComponent implements OnInit {
     this.shoppingService.getId(this.products[i].productId);
   }
 
-  /* onRadioClick($event) {
+   onRadioClick($event) {
     if ($event.target.value === 'asc') {
       this.isAsc = true;
     } else {
@@ -74,7 +73,7 @@ export class ListOfProductsComponent implements OnInit {
       this.sortFlag = 0;
       this.isDesc = false;
       this.products = [];
-      this.shoppingService.sortProduct('brand',true).subscribe((data: Product[])=>{console.log(data);this.products=data});
+      this.shoppingService.sortProduct('brand',true).subscribe(data=>{console.log(data);this.products=data});
 
     }
   }
@@ -98,7 +97,7 @@ export class ListOfProductsComponent implements OnInit {
     });
   }
 
-  /* onFilterClick() {
+  onFilterClick() {
     if (this.product.brand == '' && this.startVal == 0 && this.endVal == 0) {
       alert('nothing selected!');
     } else if (
@@ -106,14 +105,14 @@ export class ListOfProductsComponent implements OnInit {
       this.startVal == 0 &&
       this.endVal == 0
     ) 
-     // this.products = [];
-      //this.shoppingService.filterProduct(this.startVal,0,0).subscribe((data: Product[])=>{console.log(data);this.products=data});
-     /* if (this.products.length == 0) {
+     this.products = [];
+     this.shoppingService.filterProduct(this.product.brand,0,0).subscribe(data=>{console.log(data);this.products=data});
+     if (this.products.length == 0) {
         this.message = 'No Product Available';
       }
-    } else {
+    else{
       this.products = [];
-      //this.shoppingService.filterProduct(this.product.brand,this.startVal,this.startVal).subscribe((data: Product[])=>{console.log(data);this.products=data});
+      this.shoppingService.filterProduct(this.product.brand,this.startVal,this.endVal).subscribe(data=>{console.log(data);this.products=data});
       if (this.products.length == 0) {
         this.message = 'No Product Available';
       }
@@ -133,10 +132,9 @@ export class ListOfProductsComponent implements OnInit {
       alert('Cannot Compare more than 4 Products');
     }
   }
-  display() {} */
+  display() {}
 }
-
-export class Product {
+  export class Product {
   id: number;
   name: string;
   price: number;
@@ -148,27 +146,27 @@ export class Product {
   productImage3: string;
   productImage4: string;
 
-  constructor(
-    id: number,
-    name: string,
-    price: number,
-    imgUrl: string,
-    brand: string,
-    description: string,
-    productImage1: string,
-    productImage2: string,
-    productImage3: string,
-    productImage4: string
-  ) {
-    this.id = id;
-    this.name = name;
-    this.price = price;
-    this.imgUrl = imgUrl;
-    this.brand = brand;
-    this.description = description;
-    this.productImage1 = productImage1;
-    this.productImage2 = productImage2;
-    this.productImage3 = productImage3;
-    this.productImage4 = productImage4;
-  }
+  // constructor(
+  //   id: number,
+  //   name: string,
+  //   price: number,
+  //   imgUrl: string,
+  //   brand: string,
+  //   description: string,
+  //   productImage1: string,
+  //   productImage2: string,
+  //   productImage3: string,
+  //   productImage4: string
+  // ) {
+  //   this.id = id;
+  //   this.name = name;
+  //   this.price = price;
+  //   this.imgUrl = imgUrl;
+  //   this.brand = brand;
+  //   this.description = description;
+  //   this.productImage1 = productImage1;
+  //   this.productImage2 = productImage2;
+  //   this.productImage3 = productImage3;
+  //   this.productImage4 = productImage4;
+  // }
 }
