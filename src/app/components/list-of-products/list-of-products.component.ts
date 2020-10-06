@@ -51,7 +51,7 @@ export class ListOfProductsComponent implements OnInit {
   }
 
   sendProductId() {
-    
+
   }
 
  /* onRadioClick($event) {
