@@ -1,3 +1,4 @@
+import { User} from './components/authentication/signup/signup.component';
 import { Injectable, Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -22,6 +23,10 @@ export class ShoppingserviceService {
   checkregister(retailer: Retailer): Observable<Retailer> {
     let registerUrl = 'http://localhost:6969/register';
     return this.http.post<Retailer>(registerUrl, retailer);
+  }
+  chechUserRegister(customer : User):Observable<User>{
+    let registerUrl = 'http://localhost:6969/userRegistration';
+    return this.http.post<User>(registerUrl,customer);
   }
   checkAddProduct(product: Product): Observable<Product> {
     let productUrl = 'http://localhost:6969/addproduct';
@@ -85,4 +90,5 @@ export class ShoppingserviceService {
     this._url += 'getMyPlacedOrders/' + uId;
     return this.http.get<PlacedOrder[]>(this._url);
   }
+
 }

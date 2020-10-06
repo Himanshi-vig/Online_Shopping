@@ -1,6 +1,13 @@
 .container py-5{
 
 margin-top: 100px;
-padding: 100px;    
+padding: 100px;   
+
 
 }
+
+.col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+  }
+

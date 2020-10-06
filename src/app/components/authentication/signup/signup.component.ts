@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShoppingserviceService } from 'src/app/shoppingservice.service';
 
 @Component({
   selector: 'app-signup',
@@ -6,10 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  customer : User =new User();
 
-  constructor() { }
+  constructor(private shoppingservice : ShoppingserviceService) { }
 
   ngOnInit(): void {
   }
+  userRegistration(){
+    this.shoppingservice.chechUserRegister(this.customer).subscribe(response=>
+      alert(JSON.stringify(response)));
+  }
+}
 
+export class User{
+
+     name : string;
+     dateOfBirth : Date;
+     email :string;
+     phoneNo:number;
+     password1:string;
+     password2:string;
+     address:string;  
 }
