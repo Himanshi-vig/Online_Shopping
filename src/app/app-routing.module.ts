@@ -1,3 +1,4 @@
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddretailerComponent } from './components/addretailer/addretailer.component';
@@ -13,6 +14,7 @@ import { UserComponent } from './components/user/user.component';
 import { ListOfProductsComponent } from './components/list-of-products/list-of-products.component';
 import { ProductdetailComponent } from './components/productdetail/productdetail.component';
 import {UserPlaceOrderComponent} from './components/user-place-order/user-place-order.component';
+import { HeaderComponent } from './header/header.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'homepage', pathMatch: 'full' },
@@ -28,7 +30,9 @@ const routes: Routes = [
   { path: 'addretailer', component: AddretailerComponent },
   { path: 'productdetail', component: ProductdetailComponent },
   { path: 'list-of-products', component: ListOfProductsComponent },
-  { path : 'user-placeorder' , component : UserPlaceOrderComponent}
+  { path : 'user-placeorder' , component : UserPlaceOrderComponent},
+  { path: 'header', component: HeaderComponent  },
+  { path: 'dashboard', component: DashboardComponent},
 ];
 
 @NgModule({

@@ -20,6 +20,9 @@ import { ListOfProductsComponent } from './components/list-of-products/list-of-p
 import { ProductdetailComponent } from './components/productdetail/productdetail.component';
 import { UserPlaceOrderComponent } from './components/user-place-order/user-place-order.component';
 import { HeaderComponent } from './header/header.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserMyorderComponent } from './components/user-myorder/user-myorder.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -40,6 +43,10 @@ import { HeaderComponent } from './header/header.component';
     ProductdetailComponent,
     UserPlaceOrderComponent,
     HeaderComponent,
+    DashboardComponent,
+    UserMyorderComponent,
+    FooterComponent,
+    
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

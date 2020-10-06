@@ -3,14 +3,19 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Retailer } from './components/addretailer/addretailer.component';
 import { Product } from './components/retailer-addproduct/retailer-addproduct.component';
-import {Cart} from './components/dto/Cart.dto';
+import { Login, LoginStatus } from './components/authentication/login/login.component';
+import { Cart , PlacedOrder} from '../app/components/dto/genericDto';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class ShoppingserviceService {
-    private _tempurl =  'http://localhost:6969';
-    private _url =      'http://localhost:6969/';
+
+  private _url: any;
+  tempurl: any;
+  private _tempurl: any;
+
 
   constructor(private http: HttpClient) {}
 
@@ -31,19 +36,49 @@ export class ShoppingserviceService {
     return this.http.get<Product[]>(searchUrl);
   }
 
-  getMyCart(uId : string) : Observable<Cart[]>{
-    this._url = this._tempurl;
-    this._url += 'getMyCart/' + uId;
-    return this.http.get<Cart[]>(this._url);
-
-  }
 
   placeOrder(cart:Cart[],type:string): Observable<any>{
-    this._url = this._tempurl;
+    this._url = 'http://localhost:6969/';
     this._url += 'placeOrder' + '/' + type;
     return this.http.post(this._url,cart,{responseType:'text'});
     
   }
 
+  login(login: Login): Observable<LoginStatus> {
+    let loginUrl = 'http://localhost:9191/login';
+    return this.http.post<LoginStatus>(loginUrl, login);
+  }
+  updateMyCart(cartId: number, addOrMinus: number) {
+    this._url = this.tempurl;
+    this._url += 'updateMyCart/' + cartId;
+    if (addOrMinus === 1) {
+      this._url += '/' + '1';
+      return this.http.get(this._url, { responseType: 'text' });
+    } else {
+      this._url += '/' + '0';
+      return this.http.get(this._url, { responseType: 'text' });
+    }
+  }
+  deleteMyCart(cartId: string) {
+    let url = 'http://localhost:6969/deleteMyCart';
+    return this.http.delete(url + '?cartId=' + cartId);
+  }
+  addToMyCart(userId: string, productId: string) {
+    let link = 'http://localhost:6969/addToMyCart';
+    return this.http.get(
+      link + '?userId=' + userId + '&productId=' + productId
+    );
+  }
+  getMyCart(uId: string): Observable<Cart[]> {
+    this._url = this._tempurl;
+    this._url += 'getMyCart/' + uId;
+    return this.http.get<Cart[]>(this._url);
+  }
 
+  getMyPlacedOrders(uId: string) : Observable<PlacedOrder[]>
+  {
+    this._url = this._tempurl;
+    this._url += 'getMyPlacedOrders/' + uId;
+    return this.http.get<PlacedOrder[]>(this._url);
+  }
 }
