@@ -1,7 +1,7 @@
 import { User } from './components/authentication/signup/signup.component';
 
 import { Injectable, Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Retailer } from './components/addretailer/addretailer.component';
 import { Product } from './components/retailer-addproduct/retailer-addproduct.component';
@@ -43,6 +43,12 @@ export class ShoppingserviceService {
     let Url = 'http://localhost:6969/all-productdisplay';
     return this.http.get(Url);
   }
+  displayAllOrders(customerId : string): Observable<PlacedOrder[]> {
+    let params = new HttpParams();
+    params = params.append('uId',customerId);
+    let Url = 'http://localhost:6969/getMyPlacedOrders';
+    return this.http.get<PlacedOrder[]>(Url,{params});
+  }
 
   search(keyword: string): Observable<Product[]> {
     let searchUrl = 'http://localhost:6969/search?search=' + keyword;
@@ -57,6 +63,8 @@ export class ShoppingserviceService {
     let filterUrl='http://localhost:6969/filterProduct/?brand=' + brand+'&end=' + end+ '&start=' + start;
     return this.http.get<Product[]>(filterUrl);
   }
+
+  
 
   public value;
   sendInformation(data) {

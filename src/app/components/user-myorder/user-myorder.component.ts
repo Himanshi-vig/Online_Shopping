@@ -14,18 +14,14 @@ export class UserMyorderComponent implements OnInit {
   constructor( private shoppingService  :ShoppingserviceService,
     private router :Router) { }
   ngOnInit(): void {
-    if(sessionStorage.getItem('user')!="null"){
-      this.shoppingService.getMyPlacedOrders(sessionStorage.getItem('user'))
-      .subscribe((data : PlacedOrder[])=>{
-        this.myOrders=data;
-      });
-    }
-
-    else{
-      alert("User Not Logged In");
-      this.router.navigate(['homepage']);
-    }
+    this.shoppingService.displayAllOrders(sessionStorage.getItem("customerId")).subscribe((response)=>{
+      if(response){
+        this.myOrders = response;
+      }
+    });
+  }
+    
 
   }
 
-}
+

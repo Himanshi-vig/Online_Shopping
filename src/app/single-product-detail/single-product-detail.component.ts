@@ -17,7 +17,7 @@ export class SingleProductDetailComponent implements OnInit {
 
     productId;
     productInfo: ProductDto;
-  ngOnInit(): void {
+    ngOnInit(): void {
     this.productId = this.shoppingService.productId;
     console.log(this.productId);
 

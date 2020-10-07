@@ -6,7 +6,7 @@
   <div class="row">
     <strong> Sort </strong>
     <div class="forsort">
-      <label for="Radio1">Ascending</label>
+      <label for="Radio1">Descending</label>
       <input
         type="radio"
         name="radioButton"
@@ -15,7 +15,7 @@
         (change)="onRadioClick($event)"
         style="padding: 10px; margin: 5px"
       />
-      <label for="Radio2">Descending</label>
+      <label for="Radio2">Ascending</label>
       <input
         type="radio"
         name="radioButton"
@@ -31,13 +31,13 @@
         Price
       </button>
     </div>
-    <!-- <strong>Filter</strong>
+    <strong>Filter</strong>
     <div class="forfilter">
       <input
         type="text"
         name="brand"
         placeholder="Enter Brand Name"
-        [(ngModel)]="product.brand"
+        [(ngModel)]="brand"
       />
       <input
         type="number"
@@ -51,13 +51,13 @@
         placeholder="Enter Ending Value for price"
         [(ngModel)]="endVal"
       />
-      <button (click)="onFilterClick()">Filter</button> -->
-    <!-- </div>
+      <button (click)="onFilterClick()">Filter</button>
+     </div>
   </div>
-</div> -->
+</div>
 <!-- <button *ngIf="showCompareButton" [routerLink]="['/compare']">
   Compare Selected Products
-</button> --> -->
+</button> -->
 
 <div class="getproducts" *ngFor="let product of products; let i = index;">
   <div class="row">
@@ -77,21 +77,3 @@
       </div>
     </div>
   </div>
-
-    <nav aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      </ul>
-    </nav>

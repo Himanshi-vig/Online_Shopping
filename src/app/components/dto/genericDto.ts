@@ -13,7 +13,7 @@ export class Cart {
 export class PlacedOrder {
   pName: string;
   pId: number;
-  pImage: string;
+  pImage: Blob;
   pBrand: string;
   pPrice: number;
   pOrderDate: string;

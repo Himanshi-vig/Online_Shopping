@@ -1,0 +1,19 @@
+<!-- Login for Admin -->
+<div class="row">
+    <section>
+      <h1 class="heading">Admin Login Here</h1>
+      <div class="login-form">
+        <form >
+          <div class="simpleform">
+            <input type="text" name="t1" placeholder="Enter Email" [(ngModel)] = "login.email" />
+          </div>
+          <div class="simpleform">
+            <input type="text" name ="t2" placeholder="Enter Password" [(ngModel)] = "login.password" />
+          </div>
+          <div class="login-btn">
+            <button type="submit" (click) = "checkAdminLogin()" class="btn">Login</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>

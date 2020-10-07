@@ -65,20 +65,5 @@ export class LoginStatus{
   customerName: string;
   customerId: string;
 }
-    //console.log(this.login)
-
-
-
-  //   this.shoppingService.login(this.login).subscribe(data => { console.log(data);
-  //     if(data.status == true) {
-  //       sessionStorage.setItem('customerId', String(data.customerId));
-  //       sessionStorage.setItem('customerName',data.customerName);
-  //       this.router.navigate(['/dashboard']);
-  //     }
-  //     else{
-  //       this.message = data.statusMessage;
-  //     }
-  //   })
-  // }
 
 

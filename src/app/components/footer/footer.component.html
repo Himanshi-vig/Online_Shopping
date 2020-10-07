@@ -14,7 +14,19 @@
       <p>LTI Infotech</p>
     </div>
     <div class="col">
-      <h4>Contacts</h4>
+    <!---  <h4>Contacts</h4>
+    -->
+
+
+      <div class="dropdown">
+        <button class="dropbtn">Contact Us</button>
+        <div class="dropdown-content">
+          <a [routerLink]="['/adminsignin']" routerLinkActive="active">Admin</a>
+          <a [routerLink]="['/retailersignin']" routerLinkActive="active">Retailer</a>
+        </div>
+      </div>
+
+
 
       <p>Address: Bangalore</p>
       <h4>email: onlineshopping@yahoo.com</h4>

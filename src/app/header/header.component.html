@@ -2,7 +2,8 @@
         <form>
         <input class="search-container" name ="a1" type="text"  placeholder="Search.." [(ngModel)] ="keyword"/>
         <button [routerLink] = "['/list-of-products']" (click)= "test()" class="b" type="button"> Search </button> 
-        <button class="b" >Login</button>
+        <a [routerLink]="['/login']" routerLinkActive="active"><button class="b" >Login</button></a>
+        <a><button (click) = "logout()" class="b" >Log Out</button></a>
         </form>
         </div>
        
