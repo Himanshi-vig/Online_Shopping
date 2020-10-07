@@ -19,9 +19,7 @@ export class HomepageComponent implements OnInit {
     this.custName = sessionStorage.getItem('customerName');
   }
 
-  myFunction1() {
-    alert("Please Login First to Compare");
-}
+  
 userRegistration(){
   this.shoppingservice.checkUserRegister(this.customer).subscribe(response=>
     alert(JSON.stringify(response)));
@@ -31,15 +29,7 @@ validatePassword(){
     this.passwordsMatch = true;
   else this.passwordsMatch = false;
 }
-displayorders(){
-if(!sessionStorage.getItem("customerId"))
-{
-  alert("Please Login to view Orders");
-}
-else{
-  window.location.href="http://localhost:4200/user-myorder";
-}
-}
+
 }
 export class User{
 

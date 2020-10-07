@@ -1,64 +1,9 @@
 <app-header></app-header>
 
-<h2> Welcome {{custName}}</h2>
 
-<div class="btn-group">
-  <a [routerLink]="['/list-of-products']" routerLinkActive="active">
-    <button>Products</button></a
-  >
-  <button (click)="myFunction1()">Compare</button>
 
-  <a [routerLink]="['/cart']" routerLinkActive="active">
-    <button>Cart</button></a
-  >
 
-  <button (click) = "displayorders()"> My Orders</button>
 
-  <!-- <a [routerLink]="['/addretailer']" routerLinkActive="active">
-    <button>Add Retailer</button></a
-  >
-  <a [routerLink]="['/retailer-addproduct']" routerLinkActive="active">
-    <button>Add Product</button></a
-  > -->
-  <br />
-
-  <div class="dropdown">
-    <button class="dropbtn">Men</button>
-    <div class="dropdown-content">
-      <a [routerLink]="['/list-of-products']" routerLinkActive="active">Tops</a>
-      <a [routerLink]="['/list-of-products']" routerLinkActive="active"
-        >Bottoms</a
-      >
-      <a [routerLink]="['/list-of-products']" routerLinkActive="active"
-        >Accessories</a
-      >
-    </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn">Women</button>
-    <div class="dropdown-content">
-      <a [routerLink]="['/list-of-products']" routerLinkActive="active">Tops</a>
-      <a [routerLink]="['/list-of-products']" routerLinkActive="active"
-        >Bottoms</a
-      >
-      <a [routerLink]="['/list-of-products']" routerLinkActive="active"
-        >Accessories</a
-      >
-    </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn">Children</button>
-    <div class="dropdown-content">
-      <a [routerLink]="['/list-of-products']" routerLinkActive="active">Tops</a>
-      <a [routerLink]="['/list-of-products']" routerLinkActive="active"
-        >Bottoms</a
-      >
-      <a [routerLink]="['/list-of-products']" routerLinkActive="active"
-        >Accessories</a
-      >
-    </div>
-  </div>
-</div>
 <div class="productsdisp">
   <!-- <h2 style="margin: 250px; text-align: center">
     Product's Images will Display Here
