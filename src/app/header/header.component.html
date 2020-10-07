@@ -1,10 +1,73 @@
         <div class = "topnav">
+                <div class="welcome ">Welcome {{custName}}</div>
         <form>
-        <input class="search-container" name ="a1" type="text"  placeholder="Search.." [(ngModel)] ="keyword"/>
-        <button [routerLink] = "['/list-of-products']" (click)= "test()" class="b" type="button"> Search </button> 
-        <a [routerLink]="['/login']" routerLinkActive="active"><button class="b" >Login</button></a>
-        <a><button (click) = "logout()" class="b" >Log Out</button></a>
+                <div class="cards">
+                <div class="search">
+                        
+                        <input class="search-container" name ="a1" type="text"  placeholder="Search.." [(ngModel)] ="keyword"/>
+                        <button [routerLink] = "['/list-of-products']" (click)= "test()" class="b" type="button"> Search </button> 
+                        <a [routerLink]="['/login']" routerLinkActive="active"><button class="b" >Login</button></a>
+                        <a><button (click) = "logout()" class="b" >Log Out</button></a>
+                </div>
+        </div>
         </form>
         </div>
        
+        <div class="btn-group">
+                <a [routerLink]="['/list-of-products']" routerLinkActive="active">
+                  <button>Products</button></a
+                >
+                <button (click)="myFunction1()">Compare</button>
+              
+                <a [routerLink]="['/cart']" routerLinkActive="active">
+                  <button>Cart</button></a
+                >
+              
+                <button (click) = "displayorders()"> My Orders</button>
+              
+                <!-- <a [routerLink]="['/addretailer']" routerLinkActive="active">
+                  <button>Add Retailer</button></a
+                >
+                <a [routerLink]="['/retailer-addproduct']" routerLinkActive="active">
+                  <button>Add Product</button></a
+                > -->
+                <br />
+              
+                <div class="dropdown">
+                  <button class="dropbtn">Men</button>
+                  <div class="dropdown-content">
+                    <a [routerLink]="['/list-of-products']" routerLinkActive="active">Tops</a>
+                    <a [routerLink]="['/list-of-products']" routerLinkActive="active"
+                      >Bottoms</a
+                    >
+                    <a [routerLink]="['/list-of-products']" routerLinkActive="active"
+                      >Accessories</a
+                    >
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <button class="dropbtn">Women</button>
+                  <div class="dropdown-content">
+                    <a [routerLink]="['/list-of-products']" routerLinkActive="active">Tops</a>
+                    <a [routerLink]="['/list-of-products']" routerLinkActive="active"
+                      >Bottoms</a
+                    >
+                    <a [routerLink]="['/list-of-products']" routerLinkActive="active"
+                      >Accessories</a
+                    >
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <button class="dropbtn">Children</button>
+                  <div class="dropdown-content">
+                    <a [routerLink]="['/list-of-products']" routerLinkActive="active">Tops</a>
+                    <a [routerLink]="['/list-of-products']" routerLinkActive="active"
+                      >Bottoms</a
+                    >
+                    <a [routerLink]="['/list-of-products']" routerLinkActive="active"
+                      >Accessories</a
+                    >
+                  </div>
+                </div>
+              </div>
         

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ShoppingserviceService } from '../../../shoppingservice.service';
 import { ViewChild, ElementRef } from '@angular/core';
-import { FormGroup } from "@angular/forms";
+import { FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -18,25 +18,25 @@ export class LoginComponent implements OnInit{
   // message: string;
   // email: string;
   // password: string;
-  
 
-  constructor(private http :HttpClient) { }
-  ngOnInit() : void {}
-  
+
+  constructor(private http: HttpClient) { }
+  ngOnInit(): void {}
+
     // email: string;
     // password: string;
-  
-  
+
+
   // class LoginStatus {
   //   status: boolean;
   //   statusMessage: string;
   //   customerName: string;
   //   customerId: number;
   // }
-  
+
 
   checkLogin() {
-    console.log("Hello");
+    console.log('Hello');
     let data = new LoginDetails();
     data.email = this.login.email;
     data.password = this.login.password;
@@ -44,9 +44,9 @@ export class LoginComponent implements OnInit{
  if(res.status == true){
   this.loginstatus.customerId = res.customerId;
   this.loginstatus.customerName = res.customerName;
-  sessionStorage.setItem("customerName",this.loginstatus.customerName);
-  sessionStorage.setItem("customerId", this.loginstatus.customerId);
-  window.location.href = "http://localhost:4200/homepage";
+  sessionStorage.setItem('customerName',this.loginstatus.customerName);
+  sessionStorage.setItem('customerId', this.loginstatus.customerId);
+  window.location.href = 'http://localhost:4200/homepage';
 
  }
 
