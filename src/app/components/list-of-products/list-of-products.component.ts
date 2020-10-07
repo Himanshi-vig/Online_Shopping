@@ -92,7 +92,7 @@ export class ListOfProductsComponent implements OnInit {
     }
   }
   addToCart(id) {
-    this.shoppingService.addToMyCart('2', id).subscribe((data) => {
+    this.shoppingService.addToMyCart('201', id).subscribe((data) => {
       console.log(data);
     });
   }
