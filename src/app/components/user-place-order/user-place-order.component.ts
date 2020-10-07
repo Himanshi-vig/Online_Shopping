@@ -13,7 +13,7 @@ export class UserPlaceOrderComponent implements OnInit {
 
   totalPrice: number = 0;
   userCart: Cart[];
-  uId: string;
+  uId;
   payType: string;
   cart:Cart=new Cart();
 
@@ -22,7 +22,7 @@ export class UserPlaceOrderComponent implements OnInit {
 
   ngOnInit(): void {
     //this.uId = sessionStorage.getItem('user');
-    this.uId='201';
+    this.uId=201;
     if(this.uId=="null"){
       alert("User Not Logged In");
       this.router.navigate(['homepage']);

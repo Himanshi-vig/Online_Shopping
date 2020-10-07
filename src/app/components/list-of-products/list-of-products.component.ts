@@ -31,8 +31,8 @@ export class ListOfProductsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.shoppingService.displayAllProducts().subscribe((response) => {
-    this.products = response;
+    //this.shoppingService.displayAllProducts().subscribe((response) => {
+    //this.products = response;
     //this.showCompareButton = false;
     this.keyword = this.shoppingService.value;
     console.log(this.keyword);
@@ -93,7 +93,7 @@ export class ListOfProductsComponent implements OnInit {
     }
   }
   addToCart(id) {
-    this.shoppingService.addToMyCart('2', id).subscribe((data) => {
+    this.shoppingService.addToMyCart('201', id).subscribe((data) => {
       console.log(data);
     });
   }
