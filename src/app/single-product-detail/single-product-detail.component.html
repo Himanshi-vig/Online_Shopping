@@ -1,3 +1,10 @@
-<p> {{ productInfo.brand }} </p>
-<p> {{ productInfo.name }} </p>
-<p> {{productInfo.price}} </p>
+<h2><u>Photos of the Product</u></h2>
+<marquee>
+ <img src="http://localhost:6969/downloads/{{ productInfo.productImage1 }}" style="width: 100px; height: 100px "/>
+ <img src="http://localhost:6969/downloads/{{ productInfo.productImage2 }}" style="width: 100px; height: 100px "/>
+ <img src="http://localhost:6969/downloads/{{ productInfo.productImage3 }}" style="width: 100px; height: 100px "/>
+ <img src="http://localhost:6969/downloads/{{ productInfo.productImage4 }}" style="width: 100px; height: 100px "/>
+</marquee>
+<h4>Brand Name:- {{ productInfo.brand }} </h4>
+<h4>Name of Product:- {{ productInfo.name }} </h4>
+<h4>Product Price: {{productInfo.price}} </h4>

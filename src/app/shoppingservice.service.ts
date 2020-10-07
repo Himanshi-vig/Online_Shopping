@@ -52,10 +52,10 @@ export class ShoppingserviceService {
       'http://localhost:6969/sortProduct/?by=' + by + '&order=' + order;
     return this.http.get<Product[]>(sortUrl);
   }
-  filterProduct(brand : string, start : number, end :number):Observable<Product[]>{
-    let filterUrl='http://localhost:6969/filterProduct/?brand=' + brand+'&end=' + end+ '&start=' + start;
-    return this.http.get<Product[]>(filterUrl);
-  }
+  // filterProduct(brand : string, start : number, end :number):Observable<Product[]>{
+  //   let filterUrl='http://localhost:6969/filterProduct/?brand=' + brand+'&end=' + end+ '&start=' + start;
+  //   return this.http.get<Product[]>(filterUrl);
+  // }
 
   public value;
   sendInformation(data) {
