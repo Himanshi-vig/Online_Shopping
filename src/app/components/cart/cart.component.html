@@ -28,8 +28,7 @@
       <td>
         <button
           class="btn btn-danger"
-          (click)="onDeleteCartProductClick(cart.cId)"
-        >
+          (click)="onDeleteCartProductClick(cart.cId)">
           Delete item
         </button>
       </td>
@@ -40,14 +39,15 @@
     [disabled]="buyProductButton"
     [routerLink]="['/user-placeorder']"
   >
-    Buy Products
+    CheckOut
   </button>
   &nbsp;
   <strong>Your Total Cart Value is {{ totalPrice }}</strong>
 </div>
+
 <div class="btn-group">
-  <a [routerLink]="['/checkout']" routerLinkActive="active">
+ <!-- <a [routerLink]="['/checkout']" routerLinkActive="active">
     <button>CheckOut</button></a
-  >
+ -->
   <button>Delete</button>
 </div>

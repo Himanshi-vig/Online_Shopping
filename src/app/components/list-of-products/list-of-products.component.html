@@ -6,7 +6,7 @@
   <div class="row">
     <strong> Sort </strong>
     <div class="forsort">
-      <label for="Radio1">Descending</label>
+      <label for="Radio1">Ascending</label>
       <input
         type="radio"
         name="radioButton"
@@ -15,7 +15,7 @@
         (change)="onRadioClick($event)"
         style="padding: 10px; margin: 5px"
       />
-      <label for="Radio2">Ascending</label>
+      <label for="Radio2">Descending</label>
       <input
         type="radio"
         name="radioButton"
@@ -30,7 +30,7 @@
       <button type="button" (click)="onPriceSortClicked()" style="margin: 5px">
         Price
       </button>
-    <!-- </div> -->
+    </div>
     <!-- <strong>Filter</strong>
     <div class="forfilter">
       <input
@@ -52,12 +52,12 @@
         [(ngModel)]="endVal"
       />
       <button (click)="onFilterClick()">Filter</button> -->
-    </div>
+    <!-- </div>
   </div>
-</div>
+</div> -->
 <!-- <button *ngIf="showCompareButton" [routerLink]="['/compare']">
   Compare Selected Products
-</button> -->
+</button> --> -->
 
 <div class="getproducts" *ngFor="let product of products; let i = index;">
   <div class="row">
@@ -67,20 +67,16 @@
         style="width: 100px; height: 100px"
       />
       <div class="describe">
-        <a routerLink = "/singleProductDetail" (click)="sendProductId(i)">Product Specification :{{ product.description }}</a>
-        <h5>Price is :{{ product.price }}</h5>
-        <h5>Brand is :{{ product.brand }}</h5>
+        <a routerLink = "/singleProductDetail" (click)="sendProductId(i)">{{ product.description }}</a>
+        <h1>{{ product.price }}</h1>
+        <h1>{{ product.brand }}</h1>
         <div class="gotocart">
-          <button class="btn" type="button" (click)="addToCart(product.productId)" style="background: black; color: white;">Add To Cart</button>
+        <button class="btn" type="button" (click)="addToCart(product.productId)">Add To Cart</button>
       </div> 
         </div>
       </div>
     </div>
   </div>
-
-<!-- <img src="http://localhost:6969/downloads/{{ product.productImage1 }}" style="width: 100px; height: 100px"/>
-    <h1>{{ product.description }}</h1>
-    <h1>{{ product.price }}</h1> -->
 
     <nav aria-label="Page navigation example">
       <ul class="pagination">

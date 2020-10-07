@@ -10,6 +10,7 @@ import {
   LoginStatus,
 } from './components/authentication/login/login.component';
 import { Cart, PlacedOrder } from '../app/components/dto/genericDto';
+import { ParsedPropertyType } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root',
@@ -52,17 +53,16 @@ export class ShoppingserviceService {
       'http://localhost:6969/sortProduct/?by=' + by + '&order=' + order;
     return this.http.get<Product[]>(sortUrl);
   }
-  // filterProduct(brand : string, start : number, end :number):Observable<Product[]>{
-  //   let filterUrl='http://localhost:6969/filterProduct/?brand=' + brand+'&end=' + end+ '&start=' + start;
-  //   return this.http.get<Product[]>(filterUrl);
-  // }
+  filterProduct(brand : string, start : number, end :number):Observable<Product[]>{
+    let filterUrl='http://localhost:6969/filterProduct/?brand=' + brand+'&end=' + end+ '&start=' + start;
+    return this.http.get<Product[]>(filterUrl);
+  }
 
   public value;
   sendInformation(data) {
     this.value = data;
     console.log(this.value);
-  }
-  
+  } 
   
   public productId;
   getId(data){
@@ -70,10 +70,9 @@ export class ShoppingserviceService {
     console.log(this.productId);
   }
 
-  placeOrder(cart: Cart[], type: string): Observable<any> {
-    this._url = 'http://localhost:6969/';
-    this._url += 'placeOrder' + '/' + type;
-    return this.http.post(this._url, cart, { responseType: 'text' });
+  placeOrder(cart: Cart[],type:string): Observable<any> {
+    var placeOrderUrl = "http://localhost:6969/placeOrder?payType="+ type;
+    return this.http.post(placeOrderUrl,cart,{responseType:'text'});
   }
 
   login(login: Login): Observable<LoginStatus> {
@@ -94,7 +93,7 @@ export class ShoppingserviceService {
   }
   deleteMyCart(cartId: string) {
     let url = 'http://localhost:6969/deleteMyCart';
-    return this.http.delete(url + '?cartId=' + cartId);
+    return this.http.get(url + '?cartId=' + cartId,{ responseType: 'text' });
   }
   addToMyCart(userId: string, productId: string) {
     let link = 'http://localhost:6969/addToMyCart';
@@ -103,10 +102,9 @@ export class ShoppingserviceService {
     );
   }
   getMyCart(uId: string): Observable<Cart[]> {
-    this._url = this._tempurl;
 
-    this._url += 'cart?userId=' + uId;
-    return this.http.get<Cart[]>(this._url);
+    let getCartUrl = "http://localhost:6969/getMyCart?userId=" + uId;
+    return this.http.get<Cart[]>(getCartUrl);
   }
 
   getMyPlacedOrders(uId: string): Observable<PlacedOrder[]> {
