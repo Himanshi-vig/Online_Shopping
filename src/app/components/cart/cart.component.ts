@@ -52,7 +52,7 @@ export class CartComponent implements OnInit {
   onAddUpdateClick(cartId: number) {
     this.shoppingService.updateMyCart(cartId, 1).subscribe((data: string) => {
       console.log(data);
-      // this.reloadData();
+       this.reloadData();
     });
   }
   onMinusUpdateClick(cartId: number) {
@@ -66,6 +66,7 @@ export class CartComponent implements OnInit {
     this.shoppingService
       .deleteMyCart(cartId.toString())
       .subscribe((data: string) => {
+        console.log(data);
         this.reloadData();
       });
   }

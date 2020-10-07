@@ -42,11 +42,11 @@ export class LoginComponent implements OnInit{
     data.password = this.login.password;
     this.http.post<any>('http://localhost:6969/login', data).subscribe(res=>{
  if(res.status == true){
- this.loginstatus.customerId = res.customerId;
- this.loginstatus.customerName = res.customerName;
- sessionStorage.setItem("customerName",this.loginstatus.customerName);
- sessionStorage.setItem("customerId", this.loginstatus.customerId);
- window.location.href = "http://localhost:4200/homepage";
+  this.loginstatus.customerId = res.customerId;
+  this.loginstatus.customerName = res.customerName;
+  sessionStorage.setItem("customerName",this.loginstatus.customerName);
+  sessionStorage.setItem("customerId", this.loginstatus.customerId);
+  window.location.href = "http://localhost:4200/homepage";
 
  }
 
