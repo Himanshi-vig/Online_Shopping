@@ -30,15 +30,15 @@ export class ListOfProductsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.shoppingService.displayAllProducts().subscribe((response) => {
-    this.products = response;
+    //this.shoppingService.displayAllProducts().subscribe((response) => {
+    //this.products = response;
     //this.showCompareButton = false;
-    //this.keyword = this.shoppingService.value;
-    //console.log(this.keyword);
-    //this.shoppingService.search(this.keyword).subscribe((data) => {
-    //console.log(data);
+    this.keyword = this.shoppingService.value;
+    console.log(this.keyword);
+    this.shoppingService.search(this.keyword).subscribe((data) => {
+    console.log(data);
 
-     //this.products = data;
+     this.products = data;
 
     });
   }
@@ -146,27 +146,27 @@ export class ListOfProductsComponent implements OnInit {
   productImage3: string;
   productImage4: string;
 
-  // constructor(
-  //   id: number,
-  //   name: string,
-  //   price: number,
-  //   imgUrl: string,
-  //   brand: string,
-  //   description: string,
-  //   productImage1: string,
-  //   productImage2: string,
-  //   productImage3: string,
-  //   productImage4: string
-  // ) {
-  //   this.id = id;
-  //   this.name = name;
-  //   this.price = price;
-  //   this.imgUrl = imgUrl;
-  //   this.brand = brand;
-  //   this.description = description;
-  //   this.productImage1 = productImage1;
-  //   this.productImage2 = productImage2;
-  //   this.productImage3 = productImage3;
-  //   this.productImage4 = productImage4;
-  // }
+   constructor(
+     id: number,
+     name: string,
+     price: number,
+     imgUrl: string,
+     brand: string,
+     description: string,
+     productImage1: string,
+     productImage2: string,
+     productImage3: string,
+     productImage4: string
+   ) {
+    this.id = id;
+     this.name = name;
+     this.price = price;
+     this.imgUrl = imgUrl;
+     this.brand = brand;
+     this.description = description;
+     this.productImage1 = productImage1;
+     this.productImage2 = productImage2;
+     this.productImage3 = productImage3;
+     this.productImage4 = productImage4;
+   }
 }
