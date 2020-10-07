@@ -60,6 +60,7 @@ export class ShoppingserviceService {
   }
 
   placeOrder(cart: Cart[], type: string): Observable<any> {
+    console.log("placeOrder Working");
     this._url = 'http://localhost:6969/';
     this._url += 'placeOrder' + '/' + type;
     return this.http.post(this._url, cart, { responseType: 'text' });

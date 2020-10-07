@@ -21,7 +21,8 @@ export class UserPlaceOrderComponent implements OnInit {
     private shoppingService  :ShoppingserviceService) {}
 
   ngOnInit(): void {
-    this.uId = sessionStorage.getItem('user');
+    //this.uId = sessionStorage.getItem('user');
+    this.uId='201';
     if(this.uId=="null"){
       alert("User Not Logged In");
       this.router.navigate(['homepage']);
@@ -38,6 +39,7 @@ getTotalValue(pPrice,qty){
 }
 
 placeOrder(){
+  console.log()
   this.shoppingService.placeOrder(this.userCart,this.payType)
   .subscribe(data=>
     {
@@ -51,7 +53,7 @@ placeOrder(){
 
 export class Cart
 {
-    cId : number;
+  cId : number;
 	pId : number;
 	qty : number;
 	pImage1 : string;
@@ -60,8 +62,4 @@ export class Cart
 	pPrice : number;
 	totalPrice : number;
 
-
-	
-	productId:number;
-	userId:number;
 }
