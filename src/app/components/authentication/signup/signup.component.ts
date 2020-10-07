@@ -25,7 +25,7 @@ export class User{
      dateOfBirth : Date;
      email :string;
      phoneNo:number;
-     password1:string;
-     password2:string;
+     password:string;
+     //password2:string;
      address:string;  
 }

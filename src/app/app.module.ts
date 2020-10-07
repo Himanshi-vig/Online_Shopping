@@ -24,6 +24,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserMyorderComponent } from './components/user-myorder/user-myorder.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SingleProductDetailComponent } from './single-product-detail/single-product-detail.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { RetailerLoginComponent } from './components/retailer-login/retailer-login.component';
+import { UserHomepageComponent } from './components/user-homepage/user-homepage.component';
 
 
 @NgModule({
@@ -48,6 +51,9 @@ import { SingleProductDetailComponent } from './single-product-detail/single-pro
     UserMyorderComponent,
     FooterComponent,
     SingleProductDetailComponent,
+    AdminLoginComponent,
+    RetailerLoginComponent,
+    UserHomepageComponent,
     
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],

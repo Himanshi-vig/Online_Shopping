@@ -16,6 +16,9 @@ import { ProductdetailComponent } from './components/productdetail/productdetail
 import {UserPlaceOrderComponent} from './components/user-place-order/user-place-order.component';
 import { HeaderComponent } from './header/header.component';
 import { SingleProductDetailComponent } from './single-product-detail/single-product-detail.component';
+import{AdminLoginComponent} from './components/admin-login/admin-login.component';
+import{RetailerLoginComponent} from './components/retailer-login/retailer-login.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'homepage', pathMatch: 'full' },
@@ -34,7 +37,9 @@ const routes: Routes = [
   { path : 'user-placeorder' , component : UserPlaceOrderComponent},
   { path: 'header', component: HeaderComponent  },
   { path: 'dashboard', component: DashboardComponent},
-  { path: 'singleProductDetail', component: SingleProductDetailComponent}
+  { path: 'singleProductDetail', component: SingleProductDetailComponent},
+   {path:'admin-login' , component:AdminLoginComponent},
+   {path:'retailer-login' , component:RetailerLoginComponent},
 ];
 
 @NgModule({
