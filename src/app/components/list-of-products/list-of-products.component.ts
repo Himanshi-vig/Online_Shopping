@@ -22,6 +22,7 @@ export class ListOfProductsComponent implements OnInit {
   compareProduct: number[] = [];
   showCompareButton: boolean = false;
   name: string;
+  
 
   constructor(
     private shoppingService: ShoppingserviceService,

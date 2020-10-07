@@ -70,10 +70,10 @@ export class ShoppingserviceService {
     console.log(this.productId);
   }
 
-  placeOrder(cart: Cart[], type: string): Observable<any> {
-    this._url = 'http://localhost:6969/';
+  placeOrder(cart: Cart[],type:string): Observable<any> {
+    this._url = this._tempurl;
     this._url += 'placeOrder' + '/' + type;
-    return this.http.post(this._url, cart, { responseType: 'text' });
+    return this.http.post(this._url,cart,{responseType:'text'});
   }
 
   login(login: Login): Observable<LoginStatus> {
@@ -104,8 +104,7 @@ export class ShoppingserviceService {
   }
   getMyCart(uId: string): Observable<Cart[]> {
     this._url = this._tempurl;
-
-    this._url += 'cart?userId=' + uId;
+    this._url += 'getMyCart/' + uId;
     return this.http.get<Cart[]>(this._url);
   }
 

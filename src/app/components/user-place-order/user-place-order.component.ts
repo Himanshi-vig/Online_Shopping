@@ -1,7 +1,8 @@
-import { Cart } from './../dto/Cart.dto';
+import { Cart } from './../dto/genericDto';
 import { ShoppingserviceService } from 'src/app/shoppingservice.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+
 
 
 @Component({
@@ -13,14 +14,16 @@ export class UserPlaceOrderComponent implements OnInit {
 
   totalPrice: number = 0;
   userCart: Cart[];
-  uId: string;
+  uId :string ;
   payType: string;
+  //cart:Cart=new Cart();
 
   constructor( private router :Router,
     private shoppingService  :ShoppingserviceService) {}
 
   ngOnInit(): void {
-    this.uId = sessionStorage.getItem('user');
+     this.uId = sessionStorage.getItem('user');
+    //this.uId=201;
     if(this.uId=="null"){
       alert("User Not Logged In");
       this.router.navigate(['homepage']);
@@ -37,6 +40,7 @@ getTotalValue(pPrice,qty){
 }
 
 placeOrder(){
+  console.log("PlaceOrder")
   this.shoppingService.placeOrder(this.userCart,this.payType)
   .subscribe(data=>
     {
@@ -47,4 +51,3 @@ placeOrder(){
   }
 
 }
-

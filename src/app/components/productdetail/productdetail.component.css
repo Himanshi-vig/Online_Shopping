@@ -53,7 +53,7 @@
   }
   
   .back {
-    background-color: #ff414f;
+
     transform: rotateX(180deg);
     display: flex;
     justify-content: center;
