@@ -19,6 +19,11 @@ export class HeaderComponent implements OnInit {
     
     this.shoppingService.sendInformation(this.keyword);
   }
+  logout() : void{
+    sessionStorage.clear();
+    window.location.href = "http://localhost:4200/homepage";
+
+  }
  
   /*onProductSearch(){
    //console.log(this.keyword);

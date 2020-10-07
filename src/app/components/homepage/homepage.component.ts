@@ -9,6 +9,9 @@ import { ShoppingserviceService } from 'src/app/shoppingservice.service';
 export class HomepageComponent implements OnInit {
   customer : User =new User();
   custName: string ;
+  // password: string;
+  // password2: string;
+  passwordsMatch: boolean = false;
   constructor(private http : HttpClient,
     private shoppingservice : ShoppingserviceService) { }
 
@@ -23,8 +26,21 @@ userRegistration(){
   this.shoppingservice.checkUserRegister(this.customer).subscribe(response=>
     alert(JSON.stringify(response)));
 }
+validatePassword(){
+  if(this.customer.password === this.customer.password2)
+    this.passwordsMatch = true;
+  else this.passwordsMatch = false;
 }
-
+displayorders(){
+if(!sessionStorage.getItem("customerId"))
+{
+  alert("Please Login to view Orders");
+}
+else{
+  window.location.href="http://localhost:4200/user-myorder";
+}
+}
+}
 export class User{
 
   name : string;
@@ -32,6 +48,6 @@ export class User{
   email :string;
   phoneNo:number;
   password:string;
- // password2:string;
+  password2:string;
   address:string;  
 }

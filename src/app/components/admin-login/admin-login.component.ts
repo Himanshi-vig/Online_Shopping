@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminLoginComponent implements OnInit {
 
-  constructor() {}
+  adminName:string;
+
+  constructor(private http : HttpClient) {}
 
   ngOnInit(): void {
+    this.adminName = sessionStorage.getItem("adminName");
   }
 
 }

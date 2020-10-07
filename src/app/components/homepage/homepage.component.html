@@ -11,9 +11,9 @@
   <a [routerLink]="['/cart']" routerLinkActive="active">
     <button>Cart</button></a
   >
-  <!-- <a [routerLink]="['/login']" routerLinkActive="active">
-    <button>Login/SignUp</button></a
-  > -->
+
+  <button (click) = "displayorders()"> My Orders</button>
+
   <!-- <a [routerLink]="['/addretailer']" routerLinkActive="active">
     <button>Add Retailer</button></a
   >
@@ -68,17 +68,19 @@
     <h3>Let's Go Shopping !!!</h3>
     <form (ngSubmit)="userRegistration()">
       <div class="form">
-        <input name="t1" type="text" placeholder="Enter Name" [(ngModel)]= customer.name />
+        <input name="t1" type="text" placeholder="Enter Name" [(ngModel)]= customer.name required/>
       </div>
       <div class="form">
-        <input name="t2" type="email" placeholder="Enter Email" [(ngModel)]= customer.email />
+        <input name="t2" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+        placeholder="Enter Email" [(ngModel)]= customer.email required/>
       </div>
       <div class="form">
-        <input name="t3" type="password" placeholder="Enter Password"[(ngModel)]= customer.password />
+        <input name="t3" type="password" placeholder="Enter Password"[(ngModel)]= customer.password (keyup)="validatePassword()"/>
       </div>
-      <!-- <div class="form">
-        <input name="t4" type="password" placeholder="Re-enter Password" [(ngModel)]=customer.password2/>
-      </div> -->
+      <div class="form">
+        <input name="t4" type="password" placeholder="Re-enter Password" [(ngModel)]=customer.password2 (keyup)="validatePassword()"/>
+      </div>
+      <div *ngIf= "!passwordsMatch && customer.password2 && customer.password2.length>0"> Passwords do not match</div>
       <div class="form">
         <input name="t5" type="date" placeholder="Enter Date Of Birth" [(ngModel)]=customer.dateOfBirth/>
       </div>
@@ -89,7 +91,7 @@
         <input name="t7" type="text" placeholder="Enter Address" [(ngModel)]=customer.address />
       </div>
       <div class="signup-btn">
-        <button  class="btn">Sign Up</button>
+        <button [ngClass]="passwordsMatch==false?'disabled':'btn'">Sign Up</button>
       </div>
     </form>
   </div>

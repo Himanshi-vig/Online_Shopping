@@ -1,3 +1,7 @@
+import { UserMyorderComponent } from './components/user-myorder/user-myorder.component';
+import { OrderdisplayComponent } from './components/orderdisplay/orderdisplay.component';
+import { RetailersigninComponent } from './components/retailersignin/retailersignin.component';
+import { AdminsigninComponent } from './components/adminsignin/adminsignin.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -40,6 +44,10 @@ const routes: Routes = [
   { path: 'singleProductDetail', component: SingleProductDetailComponent},
    {path:'admin-login' , component:AdminLoginComponent},
    {path:'retailer-login' , component:RetailerLoginComponent},
+   {path:'adminsignin' , component :AdminsigninComponent},
+   {path:'retailersignin', component :RetailersigninComponent},
+   {path:'orderdisplay', component :OrderdisplayComponent},
+   {path:'user-myorder',component:UserMyorderComponent},
 ];
 
 @NgModule({
