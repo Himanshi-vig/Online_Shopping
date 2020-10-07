@@ -71,8 +71,7 @@
         <input name="t1" type="text" placeholder="Enter Name" [(ngModel)]= customer.name required/>
       </div>
       <div class="form">
-        <input name="t2" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
-        placeholder="Enter Email" [(ngModel)]= customer.email required/>
+        <input name="t2" type="email" placeholder="Enter Email" [(ngModel)]= customer.email required/>
       </div>
       <div class="form">
         <input name="t3" type="password" placeholder="Enter Password"[(ngModel)]= customer.password (keyup)="validatePassword()"/>
@@ -82,10 +81,10 @@
       </div>
       <div *ngIf= "!passwordsMatch && customer.password2 && customer.password2.length>0"> Passwords do not match</div>
       <div class="form">
-        <input name="t5" type="date" placeholder="Enter Date Of Birth" [(ngModel)]=customer.dateOfBirth/>
+        <input name="t5" type="date" placeholder="Enter Date Of Birth" [(ngModel)]=customer.dateOfBirth required/>
       </div>
       <div class="form">
-        <input name="t6" type="number" placeholder="Enter Phone Number" [(ngModel)]=customer.phoneNo/>
+        <input name="t6" type="tel" placeholder="Enter Phone Number" [(ngModel)]=customer.phoneNo required pattern="^\d{10}$"/>
       </div>
       <div class="form">
         <input name="t7" type="text" placeholder="Enter Address" [(ngModel)]=customer.address />

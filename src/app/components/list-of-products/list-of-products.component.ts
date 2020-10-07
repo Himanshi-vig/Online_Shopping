@@ -12,7 +12,7 @@ import { ProductDto } from '../dto/ProductDto';
 export class ListOfProductsComponent implements OnInit {
   product: Product;
   keyword: string;
-  products;
+  products: Array<any>;
 
   isDesc = false;
   isAsc = false;
@@ -24,6 +24,7 @@ export class ListOfProductsComponent implements OnInit {
   showCompareButton = false;
   name: string;
   brand: string;
+  sortOrder: string;
 
 
   constructor(
@@ -58,44 +59,76 @@ export class ListOfProductsComponent implements OnInit {
   }
 
    onRadioClick($event) {
-    if ($event.target.value === 'asc') {
-      this.isAsc = true;
-    } else {
-      this.isDesc = true;
-    }
+     this.sortOrder = $event.target.value;
+    // if ($event.target.value === 'asc') {
+    //   this.isAsc = true;
+    // } else {
+    //   this.isDesc = true;
+    // }
   }
 // tslint:disable-next-line: typedef
   onBrandSortClicked() {
-    if (this.isDesc === false && this.isAsc === false) {
-      alert('nothing selected!');
-    } else if (this.isAsc === true) {
-      this.sortFlag = 1;
-      this.isAsc = false;
-
-      this.products = [];
-      this.shoppingService.sortProduct('brand', false).subscribe(data => {console.log(data); this.products = data;});
-    } else {
-      this.sortFlag = 0;
-      this.isDesc = false;
-      this.products = [];
-      this.shoppingService.sortProduct('brand', true).subscribe(data => {console.log(data); this.products = data;});
-
+    if(this.sortOrder=="desc"){
+      this.products.sort(function(a, b){
+        if(a.brand.toLowerCase() < b.brand.toLowerCase()) { return 1; }
+        if(a.brand.toLowerCase().toLowerCase() > b.brand.toLowerCase()) { return -1; }
+        return 0;
+    })
     }
+    else{
+      this.products.sort(function(a, b){
+        if(a.brand.toLowerCase() < b.brand.toLowerCase()) { return -1; }
+        if(a.brand.toLowerCase().toLowerCase() > b.brand.toLowerCase()) { return 1; }
+        return 0;
+    })
+    }
+//     if (this.isDesc === false && this.isAsc === false) {
+//       alert('nothing selected!');
+//     } else if (this.isAsc === true) {
+//       this.sortFlag = 1;
+//       this.isDesc = false;
+//       this.products.sort(function(a, b){
+//     if(a.brand.toLowerCase() < b.brand.toLowerCase()) { return 1; }
+//     if(a.brand.toLowerCase().toLowerCase() > b.brand.toLowerCase()) { return -1; }
+//     return 0;
+// })
+//       // this.products = [];
+//       // this.shoppingService.sortProduct('brand', false).subscribe(data => {console.log(data); this.products = data;});
+//     } else {
+//       this.sortFlag = 0;
+//       this.isAsc = false;
+//       this.products.sort(function(a, b){
+//         if(a.brand.toLowerCase() < b.brand.toLowerCase()) { return -1; }
+//         if(a.brand.toLowerCase() > b.brand.toLowerCase()) { return 1; }
+//         return 0;
+//     })
+      // this.products = [];
+      // this.shoppingService.sortProduct('brand', true).subscribe(data => {console.log(data); this.products = data;});
+
+    // }
   }
 
   // tslint:disable-next-line: typedef
   onPriceSortClicked() {
-    if (this.isDesc === false && this.isAsc === false) {
-      alert('nothing selected!');
-    } else if (this.isAsc === true) {
-      this.sortFlag = 1;
-      this.isAsc = false;
-      this.shoppingService.sortProduct('price', false).subscribe(data => {console.log(data); this.products = data;});
-    } else {
-      this.sortFlag = 0;
-      this.isDesc = false;
-      this.shoppingService.sortProduct('price', true).subscribe(data => {console.log(data); this.products = data;});
+    if(this.sortOrder=="desc"){
+      this.products.sort((a,b)=> {return b.price-a.price;})
     }
+    else{
+      this.products.sort((a,b)=> {return a.price-b.price;})
+    }
+    // if (this.isDesc === false && this.isAsc === false) {
+    //   alert('nothing selected!');
+    // } else if (this.isAsc === true) {
+    //   this.sortFlag = 1;
+    //   this.isAsc = false;
+    //   this.products.sort((a,b)=> {return b.price-a.price;})
+    //   // this.shoppingService.sortProduct('price', false).subscribe(data => {console.log(data); this.products = data;});
+    // } else {
+    //   this.sortFlag = 0;
+    //   this.isDesc = false;
+    //   this.products.sort((a,b)=> {return a.price-b.price;})
+    //   // this.shoppingService.sortProduct('price', true).subscribe(data => {console.log(data); this.products = data;});
+    // }
   }
   // tslint:disable-next-line: typedef
   addToCart(id) {
@@ -106,27 +139,34 @@ export class ListOfProductsComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   onFilterClick() {
-    if (this.product.brand === '' && this.startVal === 0 && this.endVal === 0) {
+
+    if (this.brand == '' && this.startVal === 0 && this.endVal === 0) {
       alert('nothing selected!');
     // tslint:disable-next-line: curly
     } else if (
-      this.product.brand !== '' &&
+      this.brand !== '' &&
       this.startVal === 0 &&
       this.endVal === 0
-    )
+    ){
      this.products = [];
-    this.shoppingService.filterProduct(this.product.brand, 0, 0).subscribe(data => {console.log(data); this.products = data;});
-    if (this.products.length === 0) {
-        this.message = 'No Product Available';
-      }
+    this.shoppingService.filterProduct(this.brand, 0, 0).subscribe(data => {console.log(data); this.products = data;});
+    }
+    // if (this.products.length === 0) {
+    //     this.message = 'No Product Available';
+    //   }
     else{
       this.products = [];
-      this.shoppingService.filterProduct(this.product.brand, this.startVal, this.endVal).subscribe(data => 
-        {console.log(data); this.products = data;});
+      if(this.brand == undefined || this.brand == null)
+        this.brand = '';
+      this.shoppingService.filterProduct(this.brand, this.startVal, this.endVal).subscribe(data => 
+        {if(data)
+           this.products = data;});
       if (this.products.length === 0) {
         this.message = 'No Product Available';
       }
     }
+    if(!(this.isDesc === false && this.isAsc === false))
+      this.onPriceSortClicked();
   }
   // tslint:disable-next-line: typedef
   onCompareClick(selectedProduct: Product) {
