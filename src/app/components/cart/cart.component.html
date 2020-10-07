@@ -28,8 +28,7 @@
       <td>
         <button
           class="btn btn-danger"
-          (click)="onDeleteCartProductClick(cart.cId)"
-        >
+          (click)="onDeleteCartProductClick(cart.cId)">
           Delete item
         </button>
       </td>
@@ -39,7 +38,7 @@
     class="btn btn-warning my-2"
     [disabled]="buyProductButton"
     [routerLink]="['/user-placeorder']"
-  >
+    >
     CheckOut
   </button>
   &nbsp;

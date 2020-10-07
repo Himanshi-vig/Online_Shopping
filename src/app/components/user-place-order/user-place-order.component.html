@@ -1,8 +1,8 @@
 <app-header></app-header>
 <div class="container py-5" style="height: 200px; padding-top: 40px;">
     <table border="2px">
-       <tr *ngFor =" let cart of userCart">-->
-            <td><img src="{{cart.pImage1}}" style="width:128px;height:128px;"></td>
+       <tr *ngFor =" let cart of userCart">
+           <!-- <td><img src="{{cart.pImage1}}" style="width:128px;height:128px;"></td> -->
             <td>{{cart.pName}}</td>
             <td>{{cart.pBrand}}</td>
             <td>{{cart.pPrice}}</td>
@@ -39,6 +39,7 @@
         <label for="ccnum" style="margin:20px">card number</label>
         <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"> <br>
         <label for="expmonth" style="margin:20px">Exp Month</label>
+        <input type="text" id="ccnum1" name="cardnumber" placeholder="1111-2222-3333-4444" [ngModel] = "payType"> <br>
         <select name="Month">
           <option value="january">January</option>
           <option value="february">February</option>
