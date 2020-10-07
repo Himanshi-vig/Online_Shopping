@@ -52,11 +52,22 @@ export class ShoppingserviceService {
       'http://localhost:6969/sortProduct/?by=' + by + '&order=' + order;
     return this.http.get<Product[]>(sortUrl);
   }
+  filterProduct(brand : string, start : number, end :number):Observable<Product[]>{
+    let filterUrl='http://localhost:6969/filterProduct/?brand=' + brand+'&end=' + end+ '&start=' + start;
+    return this.http.get<Product[]>(filterUrl);
+  }
 
   public value;
   sendInformation(data) {
     this.value = data;
     console.log(this.value);
+  }
+  
+  
+  public productId;
+  getId(data){
+    this.productId = data;
+    console.log(this.productId);
   }
 
   placeOrder(cart: Cart[], type: string): Observable<any> {
