@@ -1,8 +1,9 @@
 .forsort {
-  width: 50%;
-  padding: 10px;
-  margin-left: 15px;
+  width: 80%;
+  padding: 20px;
+  margin-left: 35px;
   margin-bottom: 10px;
+  display: flex;
 }
 .forsort1 {
   width: 50%;
@@ -26,7 +27,24 @@ input[type="number"] {
 }
 .row {
   width: 50%;
+  color: ;
 }
 .image {
   width: 100%;
+}
+.getproducts {
+  width: 50%;
+  background-color: lightcoral;
+  align-content: center;
+  text-align: center;
+  margin: 20px;
+  padding: 40px;
+  outline-color: white;
+}
+button {
+  background-color: #ff414f;
+  color: white;
+
+  height: 30px;
+  width: 130px;
 }

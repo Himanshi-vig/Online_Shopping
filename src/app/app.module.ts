@@ -31,6 +31,7 @@ import { AdminsigninComponent } from './components/adminsignin/adminsignin.compo
 import { RetailersigninComponent } from './components/retailersignin/retailersignin.component';
 import { BlankpageComponent } from './components/blankpage/blankpage.component';
 import { OrderdisplayComponent } from './components/orderdisplay/orderdisplay.component';
+import { CompareProductsComponent } from './components/compare-products/compare-products.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { OrderdisplayComponent } from './components/orderdisplay/orderdisplay.co
     RetailersigninComponent,
     BlankpageComponent,
     OrderdisplayComponent,
+    CompareProductsComponent,
     
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],

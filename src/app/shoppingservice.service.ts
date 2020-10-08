@@ -120,4 +120,10 @@ export class ShoppingserviceService {
     this._url += 'getMyPlacedOrders/' + uId;
     return this.http.get<PlacedOrder[]>(this._url);
   }
+  getProductById(id : number) : Observable<Product>
+  {
+    this._url = this._tempurl;
+    this._url += 'getProductById/' + id;
+    return this.http.get<Product>(this._url);
+  }
 }

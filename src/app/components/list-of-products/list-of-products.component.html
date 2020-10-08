@@ -4,7 +4,7 @@
 
 <div class="getproducts">
   <div class="row">
-    <strong> Sort </strong>
+    <strong> &nbsp; &nbsp; Sort </strong>
     <div class="forsort">
       <label for="Radio1">Descending</label>
       <input
@@ -25,14 +25,15 @@
         style="padding: 10px; margin: 5px"
       />
       <button type="button" (click)="onBrandSortClicked()" style="margin: 5px">
-        Brand
-      </button>
+        Brand</button
+      >&nbsp;
       <button type="button" (click)="onPriceSortClicked()" style="margin: 5px">
         Price
       </button>
     </div>
-    <strong>Filter</strong>
+    <strong>&nbsp; &nbsp;Filter</strong>
     <div class="forfilter">
+      &nbsp; &nbsp;&nbsp; &nbsp;
       <input
         type="text"
         name="brand"
@@ -52,28 +53,36 @@
         [(ngModel)]="endVal"
       />
       <button (click)="onFilterClick()">Filter</button>
-     </div>
+    </div>
   </div>
 </div>
 <!-- <button *ngIf="showCompareButton" [routerLink]="['/compare']">
   Compare Selected Products
 </button> -->
 
-<div class="getproducts" *ngFor="let product of products; let i = index;">
+<div class="getproducts" *ngFor="let product of products; let i = index">
   <div class="row">
     <div class="image">
-       <img
+      <img
         src="http://localhost:6969/downloads/{{ product.productImage1 }}"
         style="width: 100px; height: 100px"
       />
       <div class="describe">
-        <a routerLink = "/singleProductDetail" (click)="sendProductId(i)">{{ product.description }}</a>
+        <a routerLink="/singleProductDetail" (click)="sendProductId(i)">{{
+          product.description
+        }}</a>
         <h1>{{ product.price }}</h1>
         <h1>{{ product.brand }}</h1>
         <div class="gotocart">
-        <button class="btn" type="button" (click)="addToCart(product.productId)">Add To Cart</button>
-      </div> 
+          <button
+            class="btn"
+            type="button"
+            (click)="addToCart(product.productId)"
+          >
+            Add To Cart
+          </button>
         </div>
       </div>
     </div>
   </div>
+</div>
