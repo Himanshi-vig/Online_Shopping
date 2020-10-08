@@ -44,6 +44,8 @@ export class LoginComponent implements OnInit{
  if(res.status == true){
   this.loginstatus.customerId = res.customerId;
   this.loginstatus.customerName = res.customerName;
+  //sessionStorage.setItem('customerId',JSON.stringify(this.loginstatus));
+  
   sessionStorage.setItem('customerName',this.loginstatus.customerName);
   sessionStorage.setItem('customerId', this.loginstatus.customerId);
   window.location.href = 'http://localhost:4200/homepage';

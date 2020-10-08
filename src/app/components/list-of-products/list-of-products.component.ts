@@ -132,7 +132,7 @@ export class ListOfProductsComponent implements OnInit {
   }
   // tslint:disable-next-line: typedef
   addToCart(id) {
-    this.shoppingService.addToMyCart('201', id).subscribe((data) => {
+    this.shoppingService.addToMyCart(sessionStorage.getItem('customerId'), id).subscribe((data) => {
       console.log(data);
     });
   }

@@ -19,8 +19,8 @@ export class CartComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    //this.uId = sessionStorage.getItem('user');
-    this.uId = 201;
+    this.uId = sessionStorage.getItem('customerId');
+    //this.uId = 201;
     if (this.uId == 'null') {
       alert('User Not Logged In');
       this.router.navigate(['home']);
