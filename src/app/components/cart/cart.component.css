@@ -1,25 +1,4 @@
-.btn-group button {
-  border: none;
-  height: 40px;
-  width: 150px;
-  background-color: #ff414f;
-  color: white;
-  padding: 10px;
-  font-size: 20px;
-  border-radius: 50px;
 
-  margin: 15px;
-
-  outline: none;
-  opacity: 1;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.btn-group button:hover {
-  background-color: white;
-  color: #ff414f;
-}
 
 input[type="text"] {
   width: 70%;
@@ -58,4 +37,17 @@ body {
 th,
 td {
   padding: 15px;
+}
+
+.container{
+  width:100%;
+  height:100%;
+
+}
+.cartz{
+  width:100%;
+  height:100%;
+}
+.namez{
+  font-size: medium !important;
 }
