@@ -18,7 +18,11 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.custName = sessionStorage.getItem('customerName');
   }
-
+checkNo(){
+  if(this.customer.phoneNo == null){
+    alert('Please enter 10 digit PhoneNo');
+  }
+}
   
 userRegistration(){
   this.shoppingservice.checkUserRegister(this.customer).subscribe(response=>

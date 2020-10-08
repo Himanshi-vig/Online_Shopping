@@ -35,7 +35,7 @@
         <input name="t7" type="text" placeholder="Enter Address" [(ngModel)]=customer.address />
       </div>
       <div class="signup-btn">
-        <button [ngClass]="passwordsMatch==false?'disabled':'btn'">Sign Up</button>
+        <button [ngClass]="passwordsMatch==false?'disabled':'btn'" (click) = "checkNo()">Sign Up</button>
       </div>
     </form>
   </div>
