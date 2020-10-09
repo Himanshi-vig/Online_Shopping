@@ -24,7 +24,7 @@ export class AdminsigninComponent implements OnInit {
   this.adminstatus.adminId = res.adminId;
   this.adminstatus.adminName = res.adminName;
   sessionStorage.setItem("adminName",this.adminstatus.adminName);
-  sessionStorage.setItem("customerId", this.adminstatus.adminId);
+  sessionStorage.setItem("adminId", this.adminstatus.adminId);
   window.location.href = "http://localhost:4200/admin-login";
 
   }

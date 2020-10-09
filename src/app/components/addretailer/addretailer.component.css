@@ -59,4 +59,11 @@
     background-color: #ff414f;
     color: #fff;
   }
+
+  .disabled{
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: white !important;
+    color: black !important;
+  }
   

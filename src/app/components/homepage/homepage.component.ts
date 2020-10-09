@@ -19,10 +19,15 @@ export class HomepageComponent implements OnInit {
     this.custName = sessionStorage.getItem('customerName');
   }
 checkNo(){
-  if(this.customer.phoneNo == null){
-    alert('Please enter 10 digit PhoneNo');
+  // if(this.customer.phoneNo == null){
+  //   alert('Please enter 10 digit PhoneNo');
+  //   return false;
+  //   }
+  //   else{
+  //     return true;
+  //   }
   }
-}
+
   
 userRegistration(){
   this.shoppingservice.checkUserRegister(this.customer).subscribe(response=>

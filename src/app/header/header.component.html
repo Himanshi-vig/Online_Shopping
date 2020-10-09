@@ -17,13 +17,15 @@
                 <a [routerLink]="['/list-of-products']" routerLinkActive="active">
                   <button>Products</button></a
                 >
-                <button (click)="myFunction1()">Compare</button>
+                <!-- <button (click)="myFunction1()">Compare</button> -->
               
                 <a [routerLink]="['/cart']" routerLinkActive="active">
                   <button>Cart</button></a
                 >
               
                 <button (click) = "displayorders()"> My Orders</button>
+
+                <button (click) = "displaywishlist()"> My WishList</button>
               
                 <!-- <a [routerLink]="['/addretailer']" routerLinkActive="active">
                   <button>Add Retailer</button></a
@@ -32,42 +34,4 @@
                   <button>Add Product</button></a
                 > -->
                 <br />
-              
-                <div class="dropdown">
-                  <button class="dropbtn">Men</button>
-                  <div class="dropdown-content">
-                    <a [routerLink]="['/list-of-products']" routerLinkActive="active">Tops</a>
-                    <a [routerLink]="['/list-of-products']" routerLinkActive="active"
-                      >Bottoms</a
-                    >
-                    <a [routerLink]="['/list-of-products']" routerLinkActive="active"
-                      >Accessories</a
-                    >
-                  </div>
-                </div>
-                <div class="dropdown">
-                  <button class="dropbtn">Women</button>
-                  <div class="dropdown-content">
-                    <a [routerLink]="['/list-of-products']" routerLinkActive="active">Tops</a>
-                    <a [routerLink]="['/list-of-products']" routerLinkActive="active"
-                      >Bottoms</a
-                    >
-                    <a [routerLink]="['/list-of-products']" routerLinkActive="active"
-                      >Accessories</a
-                    >
-                  </div>
-                </div>
-                <div class="dropdown">
-                  <button class="dropbtn">Children</button>
-                  <div class="dropdown-content">
-                    <a [routerLink]="['/list-of-products']" routerLinkActive="active">Tops</a>
-                    <a [routerLink]="['/list-of-products']" routerLinkActive="active"
-                      >Bottoms</a
-                    >
-                    <a [routerLink]="['/list-of-products']" routerLinkActive="active"
-                      >Accessories</a
-                    >
-                  </div>
-                </div>
-              </div>
         

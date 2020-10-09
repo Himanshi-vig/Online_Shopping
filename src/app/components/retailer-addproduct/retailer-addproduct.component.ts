@@ -7,13 +7,21 @@ import { ShoppingserviceService } from 'src/app/shoppingservice.service';
   templateUrl: './retailer-addproduct.component.html',
   styleUrls: ['./retailer-addproduct.component.css']
 })
-export class RetailerAddproductComponent  {
+export class RetailerAddproductComponent {
 
+  retailerId : number;
+  // x: any;
+  // y:any;
+  check : String = sessionStorage.getItem("counter");
   product: Product = new Product();
   constructor(private shoppingservice : ShoppingserviceService) { }
 
+  
  addProduct(){
-  this.shoppingservice.checkAddProduct(this.product).subscribe(response => alert(JSON.stringify(response)));
+  var x = sessionStorage.getItem("retailerId");
+  //var y  : number = +x;
+
+  this.shoppingservice.checkAddProduct(this.product , x).subscribe(response => alert(JSON.stringify(response)));
  }
 }
 export class Product {
@@ -27,4 +35,5 @@ export class Product {
   productImage2: string;
   productImage3: string;
   productImage4: string;
+  //retailerId : string;
 }

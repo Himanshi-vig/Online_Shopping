@@ -4,22 +4,26 @@
     <div class="registration-form">
       <form (ngSubmit)="register()">
         <div class="form">
-          <input name = "name" type="text" placeholder="Enter Name" [(ngModel)]= retailer.name  />
+          <input name = "t1" type="text" placeholder="Enter Name" [(ngModel)]= retailer.name  />
         </div>
         <div class="form">
-          <input name= "t2" type="email" placeholder="Enter Email" [(ngModel)]= retailer.email />
+          <input name= "t2" type="email" placeholder="Enter Email" [(ngModel)]= retailer.email ngModel email="true"/>
         </div>
         <div class="form">
-          <input name = "t3" type="password" placeholder="Enter Password" [(ngModel)]= retailer.password />
+          <input name = "t3" type="password" placeholder="Enter Password" [(ngModel)]= retailer.password (keyup)="validatePassword()"/>
         </div>
         <div class="form">
-          <input name = "t4" type="number" placeholder="Enter Phone Number" [(ngModel)]= retailer.phoneNo/>
+          <input name = "t4" type="password" placeholder="Retype Password" [(ngModel)]= repassword (keyup)="validatePassword()"/>
+        </div>
+        <div *ngIf= "!passwordsMatch && retailer.password && repassword.length>0"> Passwords do not match</div>
+        <div class="form">
+          <input name = "t5" type="number" placeholder="Enter Phone Number" [(ngModel)]= retailer.phoneNo/>
         </div>
         <div class="form">
-          <input name = "t5" type="text" placeholder="Enter Address" [(ngModel)]= retailer.address/>
+          <input name = "t6" type="text" placeholder="Enter Address" [(ngModel)]= retailer.address/>
         </div>
         <div class="signup-btn">
-        <button class="btn" >Sign Up</button>
+        <button class="btn" [ngClass]="passwordsMatch==false?'disabled':'btn'">Sign Up</button>
         </div>
       </form>
     </div>

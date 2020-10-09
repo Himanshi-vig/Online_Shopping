@@ -1,6 +1,4 @@
-<html>
-
-<body>
+ <div *ngIf="check=='true'">
     <div>
         <h2 class="topnav" style="color: white; text-align: center; padding-top: 10px; padding-bottom: 10px; ">Add Product</h2>
     </div>
@@ -43,6 +41,5 @@
             </div>
         </form>
     </div>
-</body>
-
-</html>
+</div>
+<div *ngIf="check!='true'">Not Allowed</div>

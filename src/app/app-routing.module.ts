@@ -1,9 +1,10 @@
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { UserMyorderComponent } from './components/user-myorder/user-myorder.component';
 import { OrderdisplayComponent } from './components/orderdisplay/orderdisplay.component';
 import { RetailersigninComponent } from './components/retailersignin/retailersignin.component';
 import { AdminsigninComponent } from './components/adminsignin/adminsignin.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddretailerComponent } from './components/addretailer/addretailer.component';
 import { LoginComponent } from './components/authentication/login/login.component';
@@ -48,6 +49,7 @@ const routes: Routes = [
    {path:'retailersignin', component :RetailersigninComponent},
    {path:'orderdisplay', component :OrderdisplayComponent},
    {path:'user-myorder',component:UserMyorderComponent},
+   {path:'wishlist', component:WishlistComponent},
 ];
 
 @NgModule({

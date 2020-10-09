@@ -10,12 +10,19 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class AddretailerComponent {
  
 
+  passwordsMatch: boolean = false;
   constructor(private shoppingservice : ShoppingserviceService) { }
 
+  repassword: string;
   retailer : Retailer = new Retailer();
    
   register() {
     this.shoppingservice.checkregister(this.retailer).subscribe(response => alert(JSON.stringify(response)));
+  }
+  validatePassword(){
+    if(this.retailer.password === this.repassword)
+      this.passwordsMatch = true;
+    else this.passwordsMatch = false;
   }
 }
 

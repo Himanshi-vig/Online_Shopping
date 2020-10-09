@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RetailerLoginComponent implements OnInit {
 
+  retailerName:string;
   constructor() { }
 
   ngOnInit(): void {
+    this.retailerName = sessionStorage.getItem("retailerName");
   }
 
 }

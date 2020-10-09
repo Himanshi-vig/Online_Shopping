@@ -1,3 +1,5 @@
+
+import { Wishlist } from './components/dto/Wishlist';
 import { User } from './components/authentication/signup/signup.component';
 
 import { Injectable, Component } from '@angular/core';
@@ -30,10 +32,7 @@ export class ShoppingserviceService {
     let registerUrl = 'http://localhost:6969/userRegistration';
     return this.http.post<User>(registerUrl, customer);
   }
-  checkAddProduct(product: Product): Observable<Product> {
-    let productUrl = 'http://localhost:6969/addproduct';
-    return this.http.post<Product>(productUrl, product);
-  }
+  
   displayProducts(productId: number): Observable<any> {
     let Url = 'http://localhost:6969/productdisplay';
     return this.http.get(Url + '?productId=' + productId);
@@ -42,6 +41,13 @@ export class ShoppingserviceService {
   displayAllProducts(): Observable<any> {
     let Url = 'http://localhost:6969/all-productdisplay';
     return this.http.get(Url);
+  }
+
+  checkAddProduct(product: Product, y : string): Observable<any> {
+    let params = new HttpParams();
+    params = params.append('retailerId',y);
+    let productUrl = 'http://localhost:6969/addproduct';
+    return this.http.post<any>(productUrl,product,{params});
   }
   displayAllOrders(customerId : string): Observable<PlacedOrder[]> {
     let params = new HttpParams();
@@ -63,8 +69,34 @@ export class ShoppingserviceService {
     let filterUrl='http://localhost:6969/filterProduct/?brand=' + brand+'&end=' + end+ '&start=' + start;
     return this.http.get<Product[]>(filterUrl);
   }
-
+  // For Wishlist
+  getMyWishlist(uId : string) : Observable<Wishlist[]> 
+  {
+    let params = new HttpParams();
+    params = params.append('uId',uId);
+    this._url = this._tempurl;
+    this._url += 'getMyWishlist';
+    return this.http.get<Wishlist[]>(this._url,{params});
+  }
+  deleteMyWishlist(wId: string)
+  {
+    let params = new HttpParams();
+    params = params.append('wId',wId);
+    this._url = this._tempurl;
+    this._url += 'deleteMyWishlist';
+    return this.http.delete(this._url,{params});
+  }
   
+
+ addToMyWishlist(uId: string, pId: string)
+  {
+    let params = new HttpParams();
+    params = params.append('uId',uId);
+    params = params.append('pId',pId);
+    this._url = this._tempurl;
+    this._url += 'addToMyWishlist';
+    return this.http.get(this._url,{params});
+  }
 
   public value;
   sendInformation(data) {

@@ -27,6 +27,17 @@ export class HeaderComponent implements OnInit {
     }
     }
 
+    displaywishlist(){
+      if(!sessionStorage.getItem("customerId"))
+      {
+        alert("Please Login to view Wishlist");
+      }
+      else{
+        window.location.href="http://localhost:4200/wishlist";
+      }
+      }
+
+
     myFunction1() {
       alert("Please Login First to Compare");
   }
@@ -44,10 +55,10 @@ export class HeaderComponent implements OnInit {
     window.location.href = 'http://localhost:4200/homepage';
   }
 
-  /*onProductSearch(){
-   //console.log(this.keyword);
-   this.router.navigate(['/list-of-products', this.keyword]);
- } */
+//   onProductSearch(){
+//    //console.log(this.keyword);
+//    this.router.navigate(['/list-of-products', this.keyword]);
+//  }
   /* loginUser()
   {
     this._router.navigate(['/user-login']);
