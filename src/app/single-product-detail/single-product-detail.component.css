@@ -1,0 +1,15 @@
+img {
+    width: 50%;
+    height: 50%;
+}
+
+
+.card {
+    display: flex;
+    
+    width: 25em;
+    float: right;
+    bottom: 550px;
+    position: sticky;
+    right: 200px;
+}

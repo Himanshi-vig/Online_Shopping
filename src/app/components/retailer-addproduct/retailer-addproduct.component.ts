@@ -11,17 +11,18 @@ export class RetailerAddproductComponent {
 
   retailerId : number;
   // x: any;
-  // y:any;
+  y:any;
   check : String = sessionStorage.getItem("counter");
   product: Product = new Product();
   constructor(private shoppingservice : ShoppingserviceService) { }
 
   
  addProduct(){
-  var x = sessionStorage.getItem("retailerId");
-  //var y  : number = +x;
-
-  this.shoppingservice.checkAddProduct(this.product , x).subscribe(response => alert(JSON.stringify(response)));
+  this.product.productImage1 = this.product.productImage1.substr(12);
+  this.product.productImage2 = this.product.productImage2.substr(12);
+  this.product.productImage3 = this.product.productImage3.substr(12);
+  this.product.productImage4 = this.product.productImage4.substr(12);
+  this.shoppingservice.checkAddProduct(this.product,this.y).subscribe(response => alert(JSON.stringify(response)));
  }
 }
 export class Product {

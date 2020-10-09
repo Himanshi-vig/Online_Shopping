@@ -32,6 +32,7 @@ import { RetailersigninComponent } from './components/retailersignin/retailersig
 import { BlankpageComponent } from './components/blankpage/blankpage.component';
 import { OrderdisplayComponent } from './components/orderdisplay/orderdisplay.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { CompareProductsComponent } from './components/compare-products/compare-products.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     BlankpageComponent,
     OrderdisplayComponent,
     WishlistComponent,
+    CompareProductsComponent,
     
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],

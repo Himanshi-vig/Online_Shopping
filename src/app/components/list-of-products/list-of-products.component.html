@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- <!-- <h2 style="text-align: center">List Of Products Available</h2>
 
 <app-header></app-header>
@@ -88,14 +89,19 @@
   </div>
 </div> -->
 <h2 style="text-align: center">List Of Products Available</h2>
+=======
+<h2 style="text-align: center"> Available Products</h2>
+>>>>>>> ab23f759fd44c38f965725db08d77af2f17faa7d
 
 <app-header></app-header>
 
 <div class="getproducts">
   <div class="row">
-    <strong> Sort </strong>
-    <div class="forsort">
+    
+    <div class="forsort" >
+      <strong id="sort"> &nbsp; &nbsp; Sort </strong>
       <label for="Radio1">Descending</label>
+    
       <input
         type="radio"
         name="radioButton"
@@ -114,14 +120,16 @@
         style="padding: 10px; margin: 5px"
       />
       <button type="button" (click)="onBrandSortClicked()" style="margin: 5px">
-        Brand
-      </button>
+        Brand</button
+      >&nbsp;
       <button type="button" (click)="onPriceSortClicked()" style="margin: 5px">
         Price
       </button>
     </div>
-    <strong>Filter</strong>
-    <div class="forfilter">
+    </div>
+    <div class="forfilter" >
+    <strong>&nbsp; &nbsp;Filter</strong>
+      
       <input
         type="text"
         name="brand"
@@ -140,26 +148,31 @@
         placeholder="Enter Ending Value for price"
         [(ngModel)]="endVal"
       />
+      <div id="filterButton">
       <button (click)="onFilterClick()">Filter</button>
-     </div>
+      </div>
+    </div>
   </div>
-</div>
-<!-- <button *ngIf="showCompareButton" [routerLink]="['/compare']">
-  Compare Selected Products
-</button> -->
 
-<div class="getproducts" *ngFor="let product of products; let i = index;">
+
+
+<div class="getproducts" *ngFor="let product of products; let i = index">
   <div class="row">
     <div class="image">
-       <img
+      <img
         src="http://localhost:6969/downloads/{{ product.productImage1 }}"
-        style="width: 100px; height: 100px"
+        style="width: 200px; height: 200px; float: left;"
       />
       <div class="describe">
-        <a routerLink = "/singleProductDetail" (click)="sendProductId(i)">{{ product.description }}</a>
-        <h1>{{ product.price }}</h1>
-        <h1>{{ product.brand }}</h1>
+        <span ><h1> <a routerLink="/singleProductDetail" (click)="sendProductId(i)">{{
+          product.name
+        }}</a></h1> </span>
+        <span><h2>Description: {{ product.description }}</h2></span>
+        <span><h2>Price: {{ product.price }}</h2></span>
+        <span><h2>Brand: {{ product.brand }}</h2> </span>
+      </div>
         <div class="gotocart">
+<<<<<<< HEAD
         <button class="btn" type="button" (click)="addToCart(product.productId)">Add To Cart</button>
         <button class="btn" type="button" (click)="addToMyWishList(product.productId)">Add To WishList</button>
       </div> 
@@ -168,3 +181,16 @@
     </div>
   </div>
   
+=======
+          <button
+            class="btn addToCart"
+            type="button"
+            (click)="addToCart(product.productId)"
+          >
+            Add To Cart
+          </button>
+      </div>
+    </div>
+  </div>
+</div>
+>>>>>>> ab23f759fd44c38f965725db08d77af2f17faa7d

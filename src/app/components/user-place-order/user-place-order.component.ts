@@ -45,7 +45,7 @@ placeOrder(){
   this.shoppingService.placeOrder(this.userCart,this.payType)
   .subscribe(data=>
     {
-      alert(data);
+      alert("Order Placed Successfully");
       this.router.navigate(['homepage']);
     } )
   

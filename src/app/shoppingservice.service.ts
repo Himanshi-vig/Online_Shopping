@@ -2,7 +2,7 @@
 import { Wishlist } from './components/dto/Wishlist';
 import { User } from './components/authentication/signup/signup.component';
 
-import { Injectable, Component } from '@angular/core';
+import { Injectable, Component , EventEmitter} from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Retailer } from './components/addretailer/addretailer.component';
@@ -20,9 +20,16 @@ import { ParsedPropertyType } from '@angular/compiler';
 export class ShoppingserviceService {
   private _url: any;
   private _tempurl = 'http://localhost:6969/';
-
+  searchBar: EventEmitter<string> = new EventEmitter<string>();
   constructor(private http: HttpClient) {}
 
+  setSearchBar(x: string){
+    this.searchBar.emit(x);
+  }
+
+  getSearchBar(){
+    return this.searchBar;
+  }
   checkregister(retailer: Retailer): Observable<Retailer> {
     let registerUrl = 'http://localhost:6969/register';
     return this.http.post<Retailer>(registerUrl, retailer);
@@ -151,5 +158,11 @@ export class ShoppingserviceService {
     this._url = this._tempurl;
     this._url += 'getMyPlacedOrders/' + uId;
     return this.http.get<PlacedOrder[]>(this._url);
+  }
+  getProductById(id : number) : Observable<Product>
+  {
+    this._url = this._tempurl;
+    this._url += 'getProductById/' + id;
+    return this.http.get<Product>(this._url);
   }
 }

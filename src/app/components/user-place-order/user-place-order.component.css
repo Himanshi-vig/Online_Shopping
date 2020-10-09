@@ -15,8 +15,14 @@ padding: 100px;
 input[type=text]{
 
   height: 20px;
- 
 
+}
+
+.bgz{
+  display: flex;
+  width: 50%;
+  background-color: lightseagreen;
+  justify-content: center;
 }
 
 
