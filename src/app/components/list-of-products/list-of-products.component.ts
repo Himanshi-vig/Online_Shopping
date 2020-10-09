@@ -265,16 +265,6 @@ export class ListOfProductsComponent implements OnInit {
    if(!this.keyword){
     this.shoppingService.displayAllProducts().subscribe((response) => {
     this.products = response;
-<<<<<<< HEAD
-    // this.showCompareButton = false;
-    // this.keyword = this.shoppingService.value;
-    // console.log(this.keyword);
-    // this.shoppingService.search(this.keyword).subscribe((data) => {
-    // console.log(data);
-    // this.products = data;
-
-    });
-=======
     })
   }
   else {
@@ -290,7 +280,6 @@ export class ListOfProductsComponent implements OnInit {
         this.products = data;
         }); 
     }) 
->>>>>>> ab23f759fd44c38f965725db08d77af2f17faa7d
   }
 
   // tslint:disable-next-line: typedef
