@@ -12,6 +12,7 @@
 }
 .forfilter {
   text-align: left;
+  float: right;
 }
 input[type="text"],
 input[type="number"] {
@@ -24,22 +25,26 @@ input[type="number"] {
 .getproducts {
   margin: 20px;
   border: white;
+  width : 100%;
+  display: flex;
 }
 .row {
-  width: 50%;
-  color: ;
+  width: 100%;
+  
+  
 }
 .image {
   width: 100%;
 }
 .getproducts {
-  width: 50%;
-  background-color: lightcoral;
+  width: 100%;
+  background-color: lightgray;
   align-content: center;
   text-align: center;
   margin: 20px;
   padding: 40px;
   outline-color: white;
+  display: flex;
 }
 button {
   background-color: #ff414f;
@@ -48,3 +53,29 @@ button {
   height: 30px;
   width: 130px;
 }
+
+#filterButton {
+  display: flex;
+  justify-content: center;
+}
+
+#sort {
+  margin-right: 10px;;
+}
+
+.describe  {
+  display: flex;
+  width: 80%;
+}
+span {
+    margin: 6px;
+    padding: 10px;
+  }
+
+  .addToCart {
+    margin-left: 100px;
+    margin-top: 20px;
+    height: 50px;
+    width: 200px;
+    float: right;
+  }

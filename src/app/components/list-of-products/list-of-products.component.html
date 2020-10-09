@@ -1,12 +1,14 @@
-<h2 style="text-align: center">List Of Products Available</h2>
+<h2 style="text-align: center"> Available Products</h2>
 
 <app-header></app-header>
 
 <div class="getproducts">
   <div class="row">
-    <strong> &nbsp; &nbsp; Sort </strong>
-    <div class="forsort">
+    
+    <div class="forsort" >
+      <strong id="sort"> &nbsp; &nbsp; Sort </strong>
       <label for="Radio1">Descending</label>
+    
       <input
         type="radio"
         name="radioButton"
@@ -31,9 +33,10 @@
         Price
       </button>
     </div>
+    </div>
+    <div class="forfilter" >
     <strong>&nbsp; &nbsp;Filter</strong>
-    <div class="forfilter">
-      &nbsp; &nbsp;&nbsp; &nbsp;
+      
       <input
         type="text"
         name="brand"
@@ -52,36 +55,37 @@
         placeholder="Enter Ending Value for price"
         [(ngModel)]="endVal"
       />
+      <div id="filterButton">
       <button (click)="onFilterClick()">Filter</button>
+      </div>
     </div>
   </div>
-</div>
-<!-- <button *ngIf="showCompareButton" [routerLink]="['/compare']">
-  Compare Selected Products
-</button> -->
+
+
 
 <div class="getproducts" *ngFor="let product of products; let i = index">
   <div class="row">
     <div class="image">
       <img
         src="http://localhost:6969/downloads/{{ product.productImage1 }}"
-        style="width: 100px; height: 100px"
+        style="width: 200px; height: 200px; float: left;"
       />
       <div class="describe">
-        <a routerLink="/singleProductDetail" (click)="sendProductId(i)">{{
-          product.description
-        }}</a>
-        <h1>{{ product.price }}</h1>
-        <h1>{{ product.brand }}</h1>
+        <span ><h1> <a routerLink="/singleProductDetail" (click)="sendProductId(i)">{{
+          product.name
+        }}</a></h1> </span>
+        <span><h2>Description: {{ product.description }}</h2></span>
+        <span><h2>Price: {{ product.price }}</h2></span>
+        <span><h2>Brand: {{ product.brand }}</h2> </span>
+      </div>
         <div class="gotocart">
           <button
-            class="btn"
+            class="btn addToCart"
             type="button"
             (click)="addToCart(product.productId)"
           >
             Add To Cart
           </button>
-        </div>
       </div>
     </div>
   </div>

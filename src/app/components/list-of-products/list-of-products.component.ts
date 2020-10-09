@@ -34,16 +34,26 @@ export class ListOfProductsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.keyword=this.shoppingService.value;
+    console.log(this.keyword)
+   if(!this.keyword){
     this.shoppingService.displayAllProducts().subscribe((response) => {
     this.products = response;
-    // this.showCompareButton = false;
-    //this.keyword = this.shoppingService.value;
-    //console.log(this.keyword);
-    //this.shoppingService.search(this.keyword).subscribe((data) => {
-    //console.log(data);
-    //this.products = data;
-
-    });
+    })
+  }
+  else {
+    
+    this.shoppingService.search(this.keyword).subscribe((data) => {
+      console.log(data);
+      this.products = data;
+      }); 
+  }
+    this.shoppingService.getSearchBar().subscribe(res=>{
+      this.shoppingService.search(res).subscribe((data) => {
+        console.log(data);
+        this.products = data;
+        }); 
+    }) 
   }
 
   // tslint:disable-next-line: typedef
@@ -60,11 +70,7 @@ export class ListOfProductsComponent implements OnInit {
 
    onRadioClick($event) {
      this.sortOrder = $event.target.value;
-    // if ($event.target.value === 'asc') {
-    //   this.isAsc = true;
-    // } else {
-    //   this.isDesc = true;
-    // }
+    
   }
 // tslint:disable-next-line: typedef
   onBrandSortClicked() {
@@ -116,19 +122,7 @@ export class ListOfProductsComponent implements OnInit {
     else{
       this.products.sort((a,b)=> {return a.price-b.price;})
     }
-    // if (this.isDesc === false && this.isAsc === false) {
-    //   alert('nothing selected!');
-    // } else if (this.isAsc === true) {
-    //   this.sortFlag = 1;
-    //   this.isAsc = false;
-    //   this.products.sort((a,b)=> {return b.price-a.price;})
-    //   // this.shoppingService.sortProduct('price', false).subscribe(data => {console.log(data); this.products = data;});
-    // } else {
-    //   this.sortFlag = 0;
-    //   this.isDesc = false;
-    //   this.products.sort((a,b)=> {return a.price-b.price;})
-    //   // this.shoppingService.sortProduct('price', true).subscribe(data => {console.log(data); this.products = data;});
-    // }
+    
   }
   // tslint:disable-next-line: typedef
   addToCart(id) {

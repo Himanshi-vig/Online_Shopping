@@ -36,8 +36,8 @@ export class HeaderComponent implements OnInit {
   }
   test() {
     console.log(this.keyword);
-
     this.shoppingService.sendInformation(this.keyword);
+    this.shoppingService.setSearchBar(this.keyword);
   }
   logout(): void {
     sessionStorage.clear();
